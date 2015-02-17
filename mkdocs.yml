@@ -1,4 +1,11 @@
 site_name: Uchiwa Docs
 pages:
   - [index.md, Home]
+  - [getting-started.md, Installation, Getting Started]
+  - [configuration/examples.md, Configuration, Examples]
+  - [configuration/sensu.md, Configuration, Sensu settings]
+  - [configuration/uchiwa.md, Configuration, Uchiwa settings]
+  - [features/health.md, Features, Health]
+  - [contributing.md, Contributing, Getting Started]
 theme: readthedocs
+repo_url: https://github.com/palourde/uchiwa-docs
