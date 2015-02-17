@@ -1,0 +1,4 @@
+site_name: Uchiwa Docs
+pages:
+  - [index.md, Home]
+theme: readthedocs
