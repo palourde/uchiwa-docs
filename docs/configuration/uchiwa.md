@@ -56,7 +56,7 @@ You need to create the **DB_NAME** beforehand.
   [...]
   "db": {
     "driver": "mymysql",
-    "scheme": "tcp:MYSQL_PORT:MYSQL_PORT*DB_NAME/USERNAME/PASSWORD"
+    "scheme": "tcp:MYSQL_HOST:MYSQL_PORT*DB_NAME/USERNAME/PASSWORD"
   },
 }
 ```
