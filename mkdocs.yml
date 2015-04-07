@@ -5,6 +5,7 @@ pages:
   - [configuration/examples.md, Configuration, Examples]
   - [configuration/sensu.md, Configuration, Sensu settings]
   - [configuration/uchiwa.md, Configuration, Uchiwa settings]
+  - [faq/faq.md, FAQ, Frequently asked questions]
   - [features/collections.md, Features, Collections]
   - [features/health.md, Features, Health]
   - [contributing.md, Contributing, Getting Started]

@@ -1,4 +1,4 @@
-The *sensu* array contains an object for every Sensu API, represented as **datacenter** in Uchiwa.
+The *sensu* array contains an object for every Sensu API, represented as **datacenters** in Uchiwa.
 
 Each object can contain the following attributes:
 

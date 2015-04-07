@@ -19,6 +19,9 @@ The *uchiwa* object can contain the following attributes:
 **refresh**  
 *Integer*. Determines the interval to pull the Sensu APIs, in seconds. The default value is **5**.
 
+### Disable authentication
+In order to disable Uchiwa authentication, you simply need to remove or leave empty the **user** and **pass** attributes.
+
 ### Simple authentication
 In order to restrict the access to the dashboard, you can easily setup a single-user account with these attributes:
 
