@@ -1,6 +1,8 @@
 The Uchiwa packages install the configuration file at `/etc/sensu/uchiwa.json`.
 
-### Minimal Configuration
+This configuration file must contains [sensu](configuration/sensu) object, which defines all Sensu APIs and the [uchiwa](configuration/uchiwa) object, which specifies the dashboard settings.
+
+**Minimal Configuration**
 ```
 {
   "sensu": [
@@ -17,7 +19,7 @@ The Uchiwa packages install the configuration file at `/etc/sensu/uchiwa.json`.
 }
 ```
 
-### Complete Configuration
+**Complete Configuration**
 ```
 {
     "sensu": [
