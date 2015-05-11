@@ -9,6 +9,7 @@ pages:
   - [features/collections.md, Features, Collections]
   - [features/github.md, Features, GitHub Authentication]
   - [features/health.md, Features, Health API]
+  - [features/ldap.md, Features, LDAP Authentication]
   - [features/sql.md, Features, SQL Authentication]
   - [contributing.md, Contributing, Getting Started]
 theme: readthedocs
