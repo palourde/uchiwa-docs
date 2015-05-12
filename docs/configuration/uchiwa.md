@@ -46,10 +46,3 @@ Password of the Uchiwa dashboard.
 
 **Disable authentication**  
 In order to disable Uchiwa authentication, you simply need to remove or leave empty the **user** and **pass** attributes.
-
-### Advanced Authentication
-
-Additional authentication drivers are available within [Sensu Enterprise](http://sensuapp.org/enterprise):
-
-- [GitHub Authentication](features/github)
-- [SQL Authentication](features/sql)
