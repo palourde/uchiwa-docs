@@ -2,6 +2,7 @@ site_name: Uchiwa Docs
 pages:
   - [index.md, Home]
   - [getting-started.md, Installation, Getting Started]
+  - [upgrading.md, Installation, Upgrading]
   - [configuration/overview.md, Configuration, Overview]
   - [configuration/sensu.md, Configuration, Sensu Configuration]
   - [configuration/uchiwa.md, Configuration, Uchiwa Configuration]
