@@ -21,17 +21,21 @@ It's recommended to use the Uchiwa packages in order to ensure the simplest inst
 **Prerequisites**  
 
 * Recent version of git
+* Recent version of node
 * Recent version of npm ([guide](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager))
-* Recent version of go ([guide](https://golang.org/doc/install))
+* Recent version of go (>= 1.3) ([guide](https://golang.org/doc/install))
 
 **Installation**
 
+* Make sure to set the **GOPATH** environment variable (e.g. `mkdir $HOME/go && export GOPATH=$HOME/go`)
+* Also add the workspace's *bin* subdirectory to your PATH: `export PATH=$PATH:$GOPATH/bin`
+* Install [Godep](https://github.com/tools/godep): `go get github.com/tools/godep`
 * Checkout the source: `go get github.com/sensu/uchiwa && cd $GOPATH/src/github.com/sensu/uchiwa`
 * Install third-party libraries:  
 Under standard user: `npm install --production`  
 Under root user: `npm install --production --unsafe-perm`  
 * Copy **config.json.example** to **config.json** - modify your Sensu API information. See configuration section.
-* Start the dashboard: `go run uchiwa.go`
+* Start the dashboard: `godep go run uchiwa.go`
 * Open your browser: `http://localhost:3000/`
 
 ### With Docker
