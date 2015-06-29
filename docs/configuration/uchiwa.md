@@ -44,5 +44,43 @@ Username of the Uchiwa dashboard.
 *String*.  
 Password of the Uchiwa dashboard.
 
-**Disable authentication**  
+### Multiple users with Simple Authentication
+Starting with Uchiwa **0.10.0**, you can now define multiple users within your configuration file. The **users** attribute  have precedence over the **user** attribute.
+
+```
+{
+  "uchiwa": {
+    "users": [
+      {
+        "username" : "admin",
+        "password": "secret",
+        "role": {
+          "readonly": false
+        }
+      },
+      {
+        "username" : "guest",
+        "password": "secret",
+        "role": {
+          "readonly": true
+        }
+      }
+    ]
+  }
+}
+```
+
+**username**  
+*String*.  
+Username of the account.
+
+**password**  
+*String*.  
+Password of the account.
+
+**readonly**  
+*Boolean*.  
+Restrict *write* access to the dashboard (create stashes, delete clients, etc.)
+
+### Disable authentication
 In order to disable Uchiwa authentication, you simply need to remove or leave empty the **user** and **pass** attributes.
