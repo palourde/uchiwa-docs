@@ -9,7 +9,7 @@ Returns both Uchiwa and Sensu API status.
 `{"uchiwa":"ok","sensu":{"0.12.6":{"output":"connect ECONNREFUSED"},"0.13.0":{"output":"ok"}}}`
 
 ### /health/sensu
-Returns Uchiwa status.
+Returns Sensu status.
 
 * success: **200 OK**  
 `{"0.12.6":{"output":"ok"},"0.13.0":{"output":"ok"}}`
