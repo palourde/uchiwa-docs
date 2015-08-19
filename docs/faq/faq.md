@@ -7,9 +7,6 @@ In order to remove Uchiwa authentication, you simply need to remove or leave emp
 
 ## Checks
 
-### Why the output of my check is empty?
-By design, if your check return the status **0** (success), the output will be discarded by Sensu so there's unfortunately no way to display it in Uchiwa. If you are collecting some kind of metric data, you should consider creating a [Sensu metric check](http://sensuapp.org/docs/latest/adding_a_metric) and add a handler to send it over Graphite, for example.
-
 ### My standalone check does not appear in the checks view
 Uchiwa uses the **/checks** Sensu API endpoint to build the checks list. This endpoint only provides the checks that are defined and known by the Sensu server itself, therefore standalone checks that are only defined on some particular clients can't be shown. They will, however, appear in the client view since they are part of the client history.
 
