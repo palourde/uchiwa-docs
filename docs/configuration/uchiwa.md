@@ -45,7 +45,7 @@ Username of the Uchiwa dashboard.
 Password of the Uchiwa dashboard.
 
 ### Multiple users with Simple Authentication
-Starting with Uchiwa **0.10.0**, you can now define multiple users within your configuration file. The **users** attribute  have precedence over the **user** attribute.
+Starting with Uchiwa **0.10.0**, you can now define multiple users, including read-only users, within your configuration file. The **users** attribute has precedence over the **user** attribute.
 
 ```
 {
