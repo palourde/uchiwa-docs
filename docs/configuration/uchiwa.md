@@ -7,7 +7,8 @@ The *uchiwa* object can contain the following attributes:
   "uchiwa": {
     "host": "0.0.0.0",
     "port": 3000,
-    "refresh": 5
+    "loglevel": "info",
+    "refresh": 10
   }
 }
 ```
@@ -20,9 +21,14 @@ Address on which Uchiwa will listen. The default value is **0.0.0.0**.
 *Integer*.  
 Port on which Uchiwa will listen. The default value is **3000**.
 
+**loglevel**  
+*String*.  
+Level of logging to show after Uchiwa has started. The default value is **info**.  
+Allowed values: `trace`, `debug`, `info`, `warn`, `fatal`
+
 **refresh**  
 *Integer*.  
-Determines the interval to pull the Sensu APIs, in seconds. The default value is **5**.
+Determines the interval to pull the Sensu APIs, in seconds. The default value is **10**.
 
 ### Simple Authentication
 In order to restrict the access to the dashboard, you can easily setup a single-user account with these attributes:
@@ -114,5 +120,5 @@ Adjust the *uchiwa* object in your configuration file in order to specify the pa
 
 Finally, restart Uchiwa and you should see the following entry in your log:
 ```
-[...]"Output":"Provided RSA keys successfully loaded"}
+[...]"message":"Provided RSA keys successfully loaded"}
 ```
