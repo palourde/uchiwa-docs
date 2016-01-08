@@ -6,7 +6,7 @@ Each package contains the Uchiwa binary along with the static HTML and JavaScrip
 Chef: [uchiwa-chef](https://github.com/sensu/uchiwa-chef)  
 Puppet: [puppet-uchiwa](https://github.com/Yelp/puppet-uchiwa)  
 Ansible: [ansible-uchiwa](https://github.com/queeno/ansible-uchiwa)  
-SaltStack: [sensu-salt](https://github.com/komljen/sensu-salt)  
+SaltStack: [sensu-formula](https://github.com/saltstack-formulas/sensu-formula)
 
 **Using Sensu repositories**  
 See [Sensu documentation](http://sensuapp.org/docs/latest/dashboards_uchiwa#packages)
