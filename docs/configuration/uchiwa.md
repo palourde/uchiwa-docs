@@ -88,7 +88,7 @@ Password of the account.
 *Boolean*.  
 Restrict *write* access to the dashboard (create stashes, delete clients, etc.)
 
-### Disable authentication
+### Disabling authentication
 In order to disable Uchiwa authentication, you simply need to remove or leave empty the **user** and **pass** attributes.
 
 ### Static RSA keys
@@ -122,3 +122,31 @@ Finally, restart Uchiwa and you should see the following entry in your log:
 ```
 [...]"message":"Provided RSA keys successfully loaded"}
 ```
+
+### Serving content over HTTPS
+
+Starting with Uchiwa **0.14.2**, you can now serve all content over HTTPS without the need of a reverse proxy. To get started with a self-signed certificate, follow these few steps:
+
+Generate the private key:
+```
+openssl genrsa -out uchiwa.key 2048
+```
+
+Generate the certificate:
+```
+openssl req -new -x509 -key uchiwa.key -out uchiwa.pem -days 365
+```
+
+Adjust the *uchiwa* object in your configuration file in order to specify the path of the keys you just generated:
+```
+{
+  "uchiwa": {
+    "ssl": {
+      "certfile": "/path/to/uchiwa.pem",
+      "keyfile": "/path/to/uchiwa.key"
+    }
+  }
+}
+```
+
+Finally, restart Uchiwa and you should be able to access your dashboard over HTTPS.
