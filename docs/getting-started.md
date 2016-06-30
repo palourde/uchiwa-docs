@@ -30,7 +30,7 @@ It's recommended to use the Uchiwa packages in order to ensure the simplest inst
 * Make sure to set the **GOPATH** environment variable (e.g. `mkdir $HOME/go && export GOPATH=$HOME/go`)
 * Also add the workspace's *bin* subdirectory to your PATH: `export PATH=$PATH:$GOPATH/bin`
 * Install [Godep](https://github.com/tools/godep): `go get github.com/tools/godep`
-* Checkout the source: `go get github.com/sensu/uchiwa && cd $GOPATH/src/github.com/sensu/uchiwa`
+* Checkout the source: `go get -d github.com/sensu/uchiwa && cd $GOPATH/src/github.com/sensu/uchiwa`
 * Install third-party libraries:  
 Under standard user: `npm install --production`  
 Under root user: `npm install --production --unsafe-perm`  
