@@ -7,8 +7,9 @@ pages:
   - [configuration/sensu.md, Configuration, Sensu Configuration]
   - [configuration/uchiwa.md, Configuration, Uchiwa Configuration]
   - [features/deleting-check-results.md, Features, Deleting Check Results]
-  - [features/health.md, Features, Health API]
+  - [features/federated-api.md, Features, Federated API]
   - [features/issuing-check-requests.md, Features, Issuing Check Requests]
+  - [api/health.md, API, Health]
   - [faq/faq.md, FAQ, Frequently Asked Questions]
   - [contributing.md, Contributing, Getting Started]
 theme: readthedocs

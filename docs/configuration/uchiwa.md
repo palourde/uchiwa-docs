@@ -60,16 +60,14 @@ Starting with Uchiwa **0.10.0**, you can now define multiple users, including re
       {
         "username" : "admin",
         "password": "secret",
-        "role": {
-          "readonly": false
-        }
+        "accessToken": "vFzX6rFDAn3G9ieuZ4ZhN-XrfdRow4Hd5CXXOUZ5NsTw4h3k3l4jAw__",
+        "readonly": false
       },
       {
         "username" : "guest",
         "password": "secret",
-        "role": {
-          "readonly": true
-        }
+        "accessToken": "hrKMW3uIt2RGxuMIoXQ-bVp-TL1MP4St5Hap3KAanMxI3OovFV48ww__",
+        "readonly": true
       }
     ]
   }
@@ -83,6 +81,16 @@ Username of the account.
 **password**  
 *String*.  
 Password of the account.
+
+**accessToken**  
+*String*.  
+A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. Requires Uchiwa **0.17.0** or later.
+
+Recommended:
+
+```
+openssl rand -base64 40 |  tr -- '+=/' '-_~'
+```
 
 **readonly**  
 *Boolean*.  
