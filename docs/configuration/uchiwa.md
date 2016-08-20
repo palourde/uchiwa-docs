@@ -96,6 +96,27 @@ openssl rand -base64 40 |  tr -- '+=/' '-_~'
 *Boolean*.  
 Restrict *write* access to the dashboard (create stashes, delete clients, etc.)
 
+### Encrypted passwords
+Starting with Uchiwa **0.17.2**, you can now place hashed passwords in the *password*
+attribute in order to avoid plain-text passwords in your configuration files.
+
+You must however **absolutely** use the `{crypt}` prefix when using an encrypted password. Example:
+
+```
+"password": "{crypt}$1$MteWnoFT$yhEi8KMxO794K0TIriZcI0",
+```
+
+The following algorithms are supported (along the commands to create the hashes):
+
++ APR1
+    - `openssl passwd -apr1 MY_PASSWORD`
++ MD5
+    - `mkpasswd --method=MD5 MY_PASSWORD`
++ SHA-256
+    - `mkpasswd --method=SHA-256 MY_PASSWORD`
++ SHA-512
+    - `mkpasswd --method=SHA-512 MY_PASSWORD`
+
 ### Disabling authentication
 In order to disable Uchiwa authentication, you simply need to remove or leave empty the **user** and **pass** attributes.
 
