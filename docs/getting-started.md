@@ -23,7 +23,7 @@ It's recommended to use the Uchiwa packages in order to ensure the simplest inst
 * Recent version of git
 * Recent version of node
 * Recent version of npm ([guide](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager))
-* Recent version of go (>= 1.3) ([guide](https://golang.org/doc/install))
+* Recent version of go (>= 1.6) ([guide](https://golang.org/doc/install))
 
 **Installation**
 
