@@ -1,4 +1,4 @@
-baseurl = "https://docs.uchiwa.io/"
+baseurl = "http://palourde.github.io/uchiwa-docs/"
 languageCode = "en-us"
 title = "Uchiwa Documentation"
 theme = "hugo-material-docs"
