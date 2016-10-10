@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reference-rsses on Uchiwa Documentation</title>
-    <link>https://docs.uchiwa.io/reference/index.xml</link>
+    <link>http://docs.uchiwa.io/reference/index.xml</link>
     <description>Recent content in Reference-rsses on Uchiwa Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <atom:link href="https://docs.uchiwa.io/reference/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://docs.uchiwa.io/reference/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Aggregates</title>
-      <link>https://docs.uchiwa.io/reference/aggregates/</link>
+      <link>http://docs.uchiwa.io/reference/aggregates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.uchiwa.io/reference/aggregates/</guid>
+      <guid>http://docs.uchiwa.io/reference/aggregates/</guid>
       <description>
 
 &lt;p&gt;To understand aggregates in Sensu, please refer yourself to the
@@ -33,17 +33,17 @@ From there, you can see the &lt;strong&gt;check&lt;/strong&gt; and &lt;strong&gt
 &lt;h2 id=&#34;delete-an-aggregate&#34;&gt;Delete An Aggregate&lt;/h2&gt;
 
 &lt;p&gt;It&amp;rsquo;s currently impossible to delete an aggregate from Uchiwa, but we would love to
-have you &lt;a href=&#34;https://docs.uchiwa.io/contributing/&#34;&gt;contribute&lt;/a&gt; to Uchiwa by
+have you &lt;a href=&#34;http://docs.uchiwa.io/contributing/&#34;&gt;contribute&lt;/a&gt; to Uchiwa by
 implementing this feature!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Checks</title>
-      <link>https://docs.uchiwa.io/reference/checks/</link>
+      <link>http://docs.uchiwa.io/reference/checks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.uchiwa.io/reference/checks/</guid>
+      <guid>http://docs.uchiwa.io/reference/checks/</guid>
       <description>
 
 &lt;p&gt;To understand checks in Sensu, please refer yourself to the
@@ -70,10 +70,10 @@ one or multiple checks on the &lt;em&gt;checks view&lt;/em&gt; and clicking on t
     
     <item>
       <title>Clients</title>
-      <link>https://docs.uchiwa.io/reference/clients/</link>
+      <link>http://docs.uchiwa.io/reference/clients/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.uchiwa.io/reference/clients/</guid>
+      <guid>http://docs.uchiwa.io/reference/clients/</guid>
       <description>
 
 &lt;p&gt;To understand clients in Sensu, please refer yourself to the
@@ -103,10 +103,10 @@ by clicking on the &lt;strong&gt;Delete Result&lt;/strong&gt; icon.&lt;/p&gt;
     
     <item>
       <title>Events</title>
-      <link>https://docs.uchiwa.io/reference/events/</link>
+      <link>http://docs.uchiwa.io/reference/events/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.uchiwa.io/reference/events/</guid>
+      <guid>http://docs.uchiwa.io/reference/events/</guid>
       <description>
 
 &lt;p&gt;To understand events in Sensu, please refer yourself to the
@@ -130,10 +130,10 @@ dropdown menu.&lt;/p&gt;
     
     <item>
       <title>Silencing</title>
-      <link>https://docs.uchiwa.io/reference/silencing/</link>
+      <link>http://docs.uchiwa.io/reference/silencing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.uchiwa.io/reference/silencing/</guid>
+      <guid>http://docs.uchiwa.io/reference/silencing/</guid>
       <description>
 
 &lt;p&gt;Follow these instructions to &lt;strong&gt;silence&lt;/strong&gt; or &lt;strong&gt;unsilence&lt;/strong&gt; an element.&lt;/p&gt;
@@ -148,7 +148,7 @@ dropdown menu.&lt;/p&gt;
 
 &lt;h3 id=&#34;for-a-particular-client&#34;&gt;For a particular client&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://docs.uchiwa.io/reference/clients/#view-a-client&#34;&gt;Access the client view for this client&lt;/a&gt;
+&lt;p&gt;&lt;a href=&#34;http://docs.uchiwa.io/reference/clients/#view-a-client&#34;&gt;Access the client view for this client&lt;/a&gt;
 and click on the silence icon corresponding to the check on the right panel.&lt;/p&gt;
 
 &lt;h2 id=&#34;silence-a-client&#34;&gt;Silence a client&lt;/h2&gt;
