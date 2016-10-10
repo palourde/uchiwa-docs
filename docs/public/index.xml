@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uchiwa Documentation</title>
+    <link>https://docs.uchiwa.io/index.xml</link>
+    <description>Recent content on Uchiwa Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Released under the MIT license</copyright>
+    <atom:link href="https://docs.uchiwa.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Uchiwa</title>
+      <link>https://docs.uchiwa.io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/</guid>
+      <description>
+
+&lt;h2 id=&#34;what-is-uchiwa&#34;&gt;What is Uchiwa?&lt;/h2&gt;
+
+&lt;p&gt;Uchiwa is a simple yet effective open-source dashboard for the
+&lt;a href=&#34;https://sensuapp.org/&#34;&gt;Sensu&lt;/a&gt; monitoring framework.&lt;/p&gt;
+
+&lt;p&gt;With Uchiwa, you are able to enhance your monitoring platform:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Improve operational visibility with a &lt;em&gt;single pane of glass&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Build tooling against a federated API&lt;/li&gt;
+&lt;li&gt;Share components and services status with your stakeholders&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Uchiwa is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Open-source&lt;/strong&gt;: Download it and customize it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Light&lt;/strong&gt;: No dependencies and a small footprint&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Powerful&lt;/strong&gt;: Manage ten of thousands of servers, applications and others&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Easy to use&lt;/strong&gt;: Abstract complex monitoring concepts to your users&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Basic Concepts</title>
+      <link>https://docs.uchiwa.io/getting-started/basic-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/getting-started/basic-concepts/</guid>
+      <description>
+
+&lt;h2 id=&#34;datacenter&#34;&gt;Datacenter&lt;/h2&gt;
+
+&lt;p&gt;A datacenter is a logical representation of a Sensu cluster.
+Datacenters can be used, for example, to organize physical datacenters or environements.&lt;/p&gt;
+
+&lt;h2 id=&#34;sensu&#34;&gt;Sensu&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://sensuapp.org/docs/latest/overview&#34;&gt;Sensu documentation&lt;/a&gt; for more concepts.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>https://docs.uchiwa.io/getting-started/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/getting-started/installation/</guid>
+      <description>
+
+&lt;h2 id=&#34;manual-installation&#34;&gt;Manual Installation&lt;/h2&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;https://uchiwa.io/#download&#34;&gt;download page&lt;/a&gt; to download the packages.&lt;/p&gt;
+
+&lt;h2 id=&#34;debian-ubuntu&#34;&gt;Debian/Ubuntu&lt;/h2&gt;
+
+&lt;p&gt;Install the GPG public key:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | sudo apt-key add -
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create an APT configuration file at &lt;code&gt;/etc/apt/sources.list.d/sensu.list&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;echo &amp;quot;deb     https://sensu.global.ssl.fastly.net/apt sensu main&amp;quot; | sudo tee /etc/apt/sources.list.d/sensu.list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update APT:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install Uchiwa:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-get install uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;rhel-centos&#34;&gt;RHEL/CentOS&lt;/h2&gt;
+
+&lt;p&gt;Create the YUM repository configuration file for the Sensu Core repository at &lt;code&gt;/etc/yum.repos.d/sensu.repo&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;echo &#39;[sensu]
+name=sensu
+baseurl=http://repositories.sensuapp.org/yum/$basearch/
+gpgcheck=0
+enabled=1&#39; | sudo tee /etc/yum.repos.d/sensu.repo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install Sensu:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo yum install sensu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;using-configuration-management&#34;&gt;Using Configuration Management&lt;/h2&gt;
+
+&lt;p&gt;Chef: &lt;a href=&#34;https://github.com/sensu/uchiwa-chef&#34;&gt;uchiwa-chef&lt;/a&gt;&lt;br /&gt;
+Puppet: &lt;a href=&#34;https://github.com/Yelp/puppet-uchiwa&#34;&gt;puppet-uchiwa&lt;/a&gt;&lt;br /&gt;
+Ansible: &lt;a href=&#34;https://github.com/queeno/ansible-uchiwa&#34;&gt;ansible-uchiwa&lt;/a&gt;&lt;br /&gt;
+SaltStack: &lt;a href=&#34;https://github.com/saltstack-formulas/sensu-formula&#34;&gt;sensu-formula&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;using-docker&#34;&gt;Using Docker&lt;/h2&gt;
+
+&lt;p&gt;Uchiwa comes pre-packaged in a &lt;a href=&#34;https://hub.docker.com/r/uchiwa/uchiwa/&#34;&gt;Docker container&lt;/a&gt; for easy deployment.&lt;/p&gt;
+
+&lt;p&gt;Download the official Uchiwa Docker image:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;docker pull uchiwa/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create a folder that will contain the configuration files:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;mkdir ~/uchiwa-config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create and adjust the main configuration file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;vi ~/uchiwa-config/config.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Start the Docker container:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;docker run -d -p 3000:3000 -v ~/uchiwa-config:/config uchiwa/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Browse Uchiwa:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;http://localhost:3000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;from-source&#34;&gt;From Source&lt;/h2&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;This documentation provides instructions for advanced users who want to build
+their own packages. Otherwise, we highly recommend to use the system packages
+in order to get stable releases and an easier installation experience.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://golang.org/doc/install&#34;&gt;Go &amp;gt;= 1.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodejs.org/en/download/package-manager/&#34;&gt;NodeJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;backend&#34;&gt;Backend&lt;/h3&gt;
+
+&lt;p&gt;Download the source code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go get -d github.com/sensu/uchiwa &amp;amp;&amp;amp; cd $GOPATH/src/github.com/sensu/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Build the Uchiwa binary:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go build -o build/uchiwa . # Build for your current system
+GOOS=linux GOARCH=amd64 go build -o build/uchiwa . # Cross Compilation, see Go documentation
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;front-end-assets&#34;&gt;Front-end Assets&lt;/h3&gt;
+
+&lt;p&gt;Install the front-end assets:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;npm install --production # Standard user
+npm install --production --unsafe-perm # Root user
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;running-uchiwa-locally&#34;&gt;Running Uchiwa Locally&lt;/h3&gt;
+
+&lt;p&gt;Adjust your configuration:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cp config.json.example config.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Start Uchiwa&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;./build/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;developping&#34;&gt;Developping&lt;/h3&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;https://docs.uchiwa.io/contributing/&#34;&gt;Contributing documentation&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://docs.uchiwa.io/getting-started/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/getting-started/configuration/</guid>
+      <description>
+
+&lt;h2 id=&#34;configuration-load-order&#34;&gt;Configuration Load Order&lt;/h2&gt;
+
+&lt;p&gt;Uchiwa loads configuration from these sources in the following order:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Uchiwa loads configuration from the configuration file (by default, this is located at &lt;code&gt;/etc/sensu/uchiwa.json&lt;/code&gt; which is provided with the &lt;code&gt;-c&lt;/code&gt; command line argument).&lt;/li&gt;
+&lt;li&gt;Uchiwa loads configuration snippets from configuration files located in one or multiple Uchiwa configuration directories (by default, this is the &lt;code&gt;/etc/sensu/dashboard.d/&lt;/code&gt; directory which is provided with the &lt;code&gt;-d&lt;/code&gt; command line argument).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;minimal-configuration&#34;&gt;Minimal Configuration&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;sensu&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;Site 1&amp;quot;,
+      &amp;quot;host&amp;quot;: &amp;quot;api1.example.com&amp;quot;,
+      &amp;quot;port&amp;quot;: 4567
+    }
+  ],
+  &amp;quot;uchiwa&amp;quot;: {
+    &amp;quot;host&amp;quot;: &amp;quot;0.0.0.0&amp;quot;,
+    &amp;quot;port&amp;quot;: 3000
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;datacenters-configuration-sensu&#34;&gt;Datacenters Configuration (Sensu)&lt;/h2&gt;
+
+&lt;p&gt;The &lt;em&gt;sensu&lt;/em&gt; array contains a hash for every Sensu API, represented as &lt;strong&gt;datacenters&lt;/strong&gt; in Uchiwa.&lt;/p&gt;
+
+&lt;p&gt;Each hash can contain the following attributes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;sensu&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;API Name&amp;quot;,
+      &amp;quot;host&amp;quot;: &amp;quot;127.0.0.1&amp;quot;,
+      &amp;quot;port&amp;quot;: 443,
+      &amp;quot;ssl&amp;quot;: true,
+      &amp;quot;insecure&amp;quot;: true,
+      &amp;quot;path&amp;quot;: &amp;quot;/site2&amp;quot;,
+      &amp;quot;timeout&amp;quot;: 5,
+      &amp;quot;user&amp;quot;: &amp;quot;admin&amp;quot;,
+      &amp;quot;pass&amp;quot;: &amp;quot;secret&amp;quot;
+    }
+  ]  
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Name of the Sensu API (used as datacenter name). If empty, a random one will be generated.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;host&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Hostname or IP address of the Sensu API.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;port&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;Port of the Sensu API. The default value is &lt;code&gt;4567&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ssl&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;Determines whether or not to use the HTTPS protocol. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;insecure&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;Determines whether or not to accept an insecure SSL certificate. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;path&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Path of the Sensu API.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;timeout&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;Timeout for the Sensu API, in seconds. The default value is &lt;code&gt;5&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;user&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Username of the Sensu API.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pass&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Password of the Sensu API.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;uchiwa-configuration&#34;&gt;Uchiwa Configuration&lt;/h2&gt;
+
+&lt;p&gt;The &lt;em&gt;uchiwa&lt;/em&gt; hash can contain the following attributes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;uchiwa&amp;quot;: {
+    &amp;quot;host&amp;quot;: &amp;quot;0.0.0.0&amp;quot;,
+    &amp;quot;port&amp;quot;: 3000,
+    &amp;quot;loglevel&amp;quot;: &amp;quot;info&amp;quot;,
+    &amp;quot;refresh&amp;quot;: 10,
+    &amp;quot;user&amp;quot;: &amp;quot;admin&amp;quot;,
+    &amp;quot;pass&amp;quot;: &amp;quot;secret&amp;quot;,
+    &amp;quot;users&amp;quot;: {...},
+    &amp;quot;auth&amp;quot;: {...},
+    &amp;quot;ssl&amp;quot;: {...}
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;host&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Address on which Uchiwa will listen. The default value is &lt;code&gt;0.0.0.0&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;port&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;Port on which Uchiwa will listen. The default value is &lt;code&gt;3000&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;loglevel&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Level of logging to show after Uchiwa has started. The default value is &lt;code&gt;info&lt;/code&gt;. Allowed values are &lt;code&gt;trace&lt;/code&gt;, &lt;code&gt;debug&lt;/code&gt;, &lt;code&gt;info&lt;/code&gt;, &lt;code&gt;warn&lt;/code&gt;, &lt;code&gt;fatal&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;refresh&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;Determines the interval to pull the Sensu APIs, in seconds. The default value is &lt;code&gt;10&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;user&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Username of the Uchiwa dashboard. Remove to disable authentication.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pass&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Password of the Uchiwa dashboard. Remove to disable authentication.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;users&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;hash&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#multiple-users&#34;&gt;See the Mutliple Users documentation&lt;/a&gt;. Has precedence over the &lt;strong&gt;user&lt;/strong&gt; attribute.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;auth&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;hash&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.uchiwa.io/guides/high-availability/#uchiwa-high-availability&#34;&gt;See the High Availability documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ssl&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;hash&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.uchiwa.io/guides/security/#https-encryption&#34;&gt;See the HTTPS Encryption documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;multiple-users&#34;&gt;Multiple Users&lt;/h3&gt;
+
+&lt;p&gt;You can define multiple users, including read-only users, within your
+users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence over the &lt;strong&gt;user&lt;/strong&gt; attribute.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;uchiwa&amp;quot;: {
+    &amp;quot;users&amp;quot;: [
+      {
+        &amp;quot;username&amp;quot; : &amp;quot;admin&amp;quot;,
+        &amp;quot;password&amp;quot;: &amp;quot;secret&amp;quot;,
+        &amp;quot;accessToken&amp;quot;: &amp;quot;vFzX6rFDAn3G9ieuZ4ZhN-XrfdRow4Hd5CXXOUZ5NsTw4h3k3l4jAw__&amp;quot;,
+        &amp;quot;readonly&amp;quot;: false
+      },
+      {
+        &amp;quot;username&amp;quot; : &amp;quot;guest&amp;quot;,
+        &amp;quot;password&amp;quot;: &amp;quot;secret&amp;quot;,
+        &amp;quot;accessToken&amp;quot;: &amp;quot;hrKMW3uIt2RGxuMIoXQ-bVp-TL1MP4St5Hap3KAanMxI3OovFV48ww__&amp;quot;,
+        &amp;quot;readonly&amp;quot;: true
+      }
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;username&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Username of the user.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;password&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Password of the user. Also see the &lt;a href=&#34;https://docs.uchiwa.io/guides/security/#encrypted-passwords&#34;&gt;Encrypted Passwords documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;accessToken&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. &lt;a href=&#34;#generating-an-access-token&#34;&gt;See Generating an access token&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;readonly&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;Restrict write access to the dashboard (create stashes, delete clients, etc.). The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;generating-an-access-token&#34;&gt;Generating an access token&lt;/h3&gt;
+
+&lt;p&gt;An access token must only contain friendly URL characters. We recommend using
+the following command to create a proper token:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openssl rand -base64 40 |  tr -- &#39;+=/&#39; &#39;-_~&#39;```
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>High Availability</title>
+      <link>https://docs.uchiwa.io/guides/high-availability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/guides/high-availability/</guid>
+      <description>
+
+&lt;h2 id=&#34;datacenters-high-availability&#34;&gt;Datacenters High Availability&lt;/h2&gt;
+
+&lt;p&gt;You can define multiple Sensu APIs by datacenter in order to provide &lt;strong&gt;failover&lt;/strong&gt;
+and rudimentary &lt;strong&gt;load balancing&lt;/strong&gt; between these APIs.&lt;/p&gt;
+
+&lt;p&gt;To get started with this feature, you&amp;rsquo;ll simply need to define at least two
+&lt;a href=&#34;https://docs.uchiwa.io/getting-started/configuration/#datacenters-configuration-sensu&#34;&gt;Sensu objects&lt;/a&gt;
+ with the &lt;strong&gt;same name&lt;/strong&gt;. Here&amp;rsquo;s a basic example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;sensu&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;us-east-1&amp;quot;,
+      &amp;quot;host&amp;quot;: &amp;quot;10.0.0.1&amp;quot;,
+      &amp;quot;port&amp;quot;: 4567
+    },
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;us-east-1&amp;quot;,
+      &amp;quot;host&amp;quot;: &amp;quot;10.0.0.2&amp;quot;,
+      &amp;quot;port&amp;quot;: 4567
+    }
+  ]  
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With this configuration, the datacenter &lt;em&gt;us-east-1&lt;/em&gt; now has two APIs (&lt;em&gt;10.0.0.1&lt;/em&gt; and &lt;em&gt;10.0.0.2&lt;/em&gt;) and Uchiwa will balance the requests between these two APIs and failback to the second API in case of connectivity issue.&lt;/p&gt;
+
+&lt;h2 id=&#34;uchiwa-high-availability&#34;&gt;Uchiwa High Availability&lt;/h2&gt;
+
+&lt;p&gt;If you are using Uchiwa built-in authentication and wish to run multiple
+instances of Uchiwa together, you will need to adjust your configuration.&lt;/p&gt;
+
+&lt;p&gt;Uchiwa generates a temporary key during its launch, which is later destroyed once the process is stopped or restarted. This key is used for generating and validating the signatures of the JSON Web Tokens (JWT) for authentication.&lt;/p&gt;
+
+&lt;p&gt;This behaviour is problematic when multiple instances of Uchiwa are used behind a load balancer or if the Uchiwa process needs to be frequently restarted. To use your own keys, follow these few steps:&lt;/p&gt;
+
+&lt;p&gt;Generate the private key:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;openssl genrsa -out uchiwa.rsa 2048
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Extract the public key:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;openssl rsa -in uchiwa.rsa -pubout &amp;gt; uchiwa.rsa.pub
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Adjust the &lt;em&gt;uchiwa&lt;/em&gt; object in your configuration file in order to specify the path of the keys you just generated:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;uchiwa&amp;quot;: {
+    &amp;quot;auth&amp;quot;: {
+      &amp;quot;privatekey&amp;quot;: &amp;quot;/path/to/uchiwa.rsa&amp;quot;,
+      &amp;quot;publickey&amp;quot;: &amp;quot;/path/to/uchiwa.rsa.pub&amp;quot;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, restart Uchiwa and you should see the following entry in your log:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;[...]
+&amp;quot;message&amp;quot;:&amp;quot;Provided RSA keys successfully loaded&amp;quot;
+[...]
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://docs.uchiwa.io/guides/security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/guides/security/</guid>
+      <description>
+
+&lt;h2 id=&#34;encrypted-passwords&#34;&gt;Encrypted Passwords&lt;/h2&gt;
+
+&lt;p&gt;You can place hashed passwords in the &lt;em&gt;password&lt;/em&gt;
+attributes, but only within the &lt;strong&gt;uchiwa&lt;/strong&gt; object, in order to obfuscate
+users passwords in your configuration files.&lt;/p&gt;
+
+&lt;p&gt;Please note that you must &lt;strong&gt;absolutely&lt;/strong&gt; use the &lt;code&gt;{crypt}&lt;/code&gt; prefix when using an encrypted
+password. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;password&amp;quot;: &amp;quot;{crypt}$1$MteWnoFT$yhEi8KMxO794K0TIriZcI0&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following algorithms are supported (along the commands to create the hashes):&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Algorithm&lt;/th&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;APR1&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;openssl passwd -apr1 MY_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MD5&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;mkpasswd --method=MD5 MY_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SHA-256&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;mkpasswd --method=SHA-256 MY_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SHA-512&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;mkpasswd --method=SHA-512 MY_PASSWORD&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;https-encryption&#34;&gt;HTTPS Encryption&lt;/h2&gt;
+
+&lt;p&gt;You can serve all content over HTTPS, using Uchiwa, without the need of
+a reverse proxy. To get started, follow these few steps:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Optional&lt;/em&gt; - Generate a private key:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;openssl genrsa -out uchiwa.key 2048
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Optional&lt;/em&gt; - Generate a self-signed certificate:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;openssl req -new -x509 -key uchiwa.key -out uchiwa.pem -days 365
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Adjust the &lt;em&gt;uchiwa&lt;/em&gt; object in your configuration file in order to specify the
+path of the keys you just generated:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;uchiwa&amp;quot;: {
+    &amp;quot;ssl&amp;quot;: {
+      &amp;quot;certfile&amp;quot;: &amp;quot;/path/to/uchiwa.pem&amp;quot;,
+      &amp;quot;keyfile&amp;quot;: &amp;quot;/path/to/uchiwa.key&amp;quot;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, restart Uchiwa and access your dashboard over HTTPS.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://docs.uchiwa.io/guides/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/guides/troubleshooting/</guid>
+      <description>
+
+&lt;h2 id=&#34;authentication&#34;&gt;Authentication&lt;/h2&gt;
+
+&lt;h3 id=&#34;how-do-i-disable-uchiwa-built-in-authentication&#34;&gt;How do I disable Uchiwa built-in authentication?&lt;/h3&gt;
+
+&lt;p&gt;In order to remove Uchiwa authentication, you simply need to remove or
+leave empty the &lt;strong&gt;user&lt;/strong&gt;, &lt;strong&gt;pass&lt;/strong&gt; and &lt;strong&gt;users&lt;/strong&gt; attributes from the
+&lt;a href=&#34;https://docs.uchiwa.io/getting-started/configuration/#uchiwa-configuration&#34;&gt;Uchiwa Configuration&lt;/a&gt;
+on your configuration file.&lt;/p&gt;
+
+&lt;h2 id=&#34;checks&#34;&gt;Checks&lt;/h2&gt;
+
+&lt;h3 id=&#34;my-standalone-check-does-not-appear-in-the-checks-view&#34;&gt;My standalone check does not appear in the checks view&lt;/h3&gt;
+
+&lt;p&gt;Uchiwa uses the &lt;strong&gt;/checks&lt;/strong&gt; Sensu API endpoint to build the checks list. This
+endpoint only provides the checks that are defined and known by the Sensu server
+itself, therefore standalone checks that are only defined on some particular
+clients can&amp;rsquo;t be shown. They will, however, appear in the client view since they
+are part of the client history.&lt;/p&gt;
+
+&lt;h3 id=&#34;why-can-t-i-see-the-details-of-a-standalone-check&#34;&gt;Why can&amp;rsquo;t I see the details of a standalone check?&lt;/h3&gt;
+
+&lt;p&gt;Unless an event is created for this particular check, the details of a
+standalone check, such as the command executed, are not available. See the
+previous question for more details.&lt;/p&gt;
+
+&lt;h2 id=&#34;errors&#34;&gt;Errors&lt;/h2&gt;
+
+&lt;h3 id=&#34;i-see-the-error-message-401-unauthorized&#34;&gt;I see the error message &lt;em&gt;401 Unauthorized&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;If you configured a user/pass authentication on your Sensu API, you need to add
+these details to your Uchiwa configuration by adding the user and pass attributes
+in the proper datacenter object within the &lt;em&gt;sensu&lt;/em&gt; array, as shown on the
+&lt;a href=&#34;https://docs.uchiwa.io/getting-started/configuration/#datacenters-configuration-sensu&#34;&gt;Datacenters Configuration&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;i-see-the-error-message-x509-certificate-signed-by-unknown-authority&#34;&gt;I see the error message &lt;em&gt;x509: certificate signed by unknown authority&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;By default, Uchiwa will refuse to make any connection to an API with an invalid
+SSL certificate, therefore it needs to be explicitly allowed.
+See the &lt;strong&gt;insecure&lt;/strong&gt; attribute in the
+&lt;a href=&#34;https://docs.uchiwa.io/getting-started/configuration/#datacenters-configuration-sensu&#34;&gt;Datacenters Configuration&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&#34;which-platforms-are-supported-by-uchiwa&#34;&gt;Which platforms are supported by Uchiwa?&lt;/h3&gt;
+
+&lt;p&gt;Uchiwa binaries are compiled for linux, on 386 and amd64 architectures, and
+packaged into DEB and RPM packages. If you wish to compile the binary for an
+another operating system and compilation architecture,
+refer yourself to the
+&lt;a href=&#34;https://docs.uchiwa.io/getting-started/installation/#from-source&#34;&gt;Installation documentation&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Aggregates</title>
+      <link>https://docs.uchiwa.io/reference/aggregates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/reference/aggregates/</guid>
+      <description>
+
+&lt;p&gt;To understand aggregates in Sensu, please refer yourself to the
+&lt;a href=&#34;https://sensuapp.org/docs/latest/reference/aggregates.html&#34;&gt;Sensu documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;list-all-aggregates&#34;&gt;List All Aggregates&lt;/h2&gt;
+
+&lt;p&gt;To view all aggregates, head over to the &lt;em&gt;aggregates view&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;view-an-aggregate&#34;&gt;View An Aggregate&lt;/h2&gt;
+
+&lt;p&gt;To see the detail of a specific aggregate, click on it from the &lt;em&gt;aggregates view&lt;/em&gt;.
+From there, you can see the &lt;strong&gt;check&lt;/strong&gt; and &lt;strong&gt;client members&lt;/strong&gt;, in addition to the
+&lt;strong&gt;results&lt;/strong&gt; of every check members.&lt;/p&gt;
+
+&lt;h2 id=&#34;delete-an-aggregate&#34;&gt;Delete An Aggregate&lt;/h2&gt;
+
+&lt;p&gt;It&amp;rsquo;s currently impossible to delete an aggregate from Uchiwa, but we would love to
+have you &lt;a href=&#34;https://docs.uchiwa.io/contributing/&#34;&gt;contribute&lt;/a&gt; to Uchiwa by
+implementing this feature!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Checks</title>
+      <link>https://docs.uchiwa.io/reference/checks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/reference/checks/</guid>
+      <description>
+
+&lt;p&gt;To understand checks in Sensu, please refer yourself to the
+&lt;a href=&#34;https://sensuapp.org/docs/latest/reference/checks.html&#34;&gt;Sensu documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;list-all-checks&#34;&gt;List All Checks&lt;/h2&gt;
+
+&lt;p&gt;To view all checks, head over to the &lt;em&gt;checks view&lt;/em&gt;. Please note that standalone checks
+that are not installed on the &lt;em&gt;Sensu Server&lt;/em&gt; will not be displayed.&lt;/p&gt;
+
+&lt;h2 id=&#34;issue-a-check-request&#34;&gt;Issue A Check Request&lt;/h2&gt;
+
+&lt;p&gt;You can force a check request across a datacenter by selecting one or multiple
+checks on the &lt;em&gt;checks view&lt;/em&gt; and clicking on the &lt;strong&gt;Issue Check Request&lt;/strong&gt; action
+within the &lt;strong&gt;Bulk Actions&lt;/strong&gt; dropdown menu.&lt;/p&gt;
+
+&lt;h2 id=&#34;silence-unsilence-a-check&#34;&gt;Silence/Unsilence A Check&lt;/h2&gt;
+
+&lt;p&gt;You can silence a check across all clients within a datacenter by selecting
+one or multiple checks on the &lt;em&gt;checks view&lt;/em&gt; and clicking on the
+&lt;strong&gt;Silence/Unsilence&lt;/strong&gt; action within the &lt;strong&gt;Bulk Actions&lt;/strong&gt; dropdown menu.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Clients</title>
+      <link>https://docs.uchiwa.io/reference/clients/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/reference/clients/</guid>
+      <description>
+
+&lt;p&gt;To understand clients in Sensu, please refer yourself to the
+&lt;a href=&#34;https://sensuapp.org/docs/latest/reference/clients.html&#34;&gt;Sensu documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;list-all-clients&#34;&gt;List All Clients&lt;/h2&gt;
+
+&lt;p&gt;To view all clients, including Sensu proxy clients (formerly known as
+&amp;ldquo;Just-in-time&amp;rdquo; or &amp;ldquo;JIT&amp;rdquo; clients), head over to the &lt;em&gt;clients view&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;view-a-client&#34;&gt;View A Client&lt;/h2&gt;
+
+&lt;p&gt;To see the detail of a specific client, click on it from the &lt;em&gt;clients view&lt;/em&gt;.
+From there, you can see the client data of the left panel and the check results
+data on the right one.&lt;/p&gt;
+
+&lt;h2 id=&#34;view-a-check-result-data&#34;&gt;View A Check Result Data&lt;/h2&gt;
+
+&lt;p&gt;To see the detail of a check result, click on it from the &lt;em&gt;client view&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;request-to-delete-check-result-data&#34;&gt;Request To Delete Check Result Data&lt;/h2&gt;
+
+&lt;p&gt;Once you see the detail of a check result, you can delete the check result data
+by clicking on the &lt;strong&gt;Delete Result&lt;/strong&gt; icon.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Events</title>
+      <link>https://docs.uchiwa.io/reference/events/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/reference/events/</guid>
+      <description>
+
+&lt;p&gt;To understand events in Sensu, please refer yourself to the
+&lt;a href=&#34;https://sensuapp.org/docs/latest/reference/events.html&#34;&gt;Sensu documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;list-all-events&#34;&gt;List All Events&lt;/h2&gt;
+
+&lt;p&gt;To view all events, head over to the &lt;em&gt;events view&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;view-an-event&#34;&gt;View An Event&lt;/h2&gt;
+
+&lt;p&gt;To see the detail of a specific event, click on it from the &lt;em&gt;events view&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;resolve-an-event&#34;&gt;Resolve An Event&lt;/h2&gt;
+
+&lt;p&gt;You can resolve an event by selecting one or multiple events on the
+&lt;em&gt;events view&lt;/em&gt; and clicking on the &lt;strong&gt;Resolve&lt;/strong&gt; action within the &lt;strong&gt;Bulk Actions&lt;/strong&gt;
+dropdown menu.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Silencing</title>
+      <link>https://docs.uchiwa.io/reference/silencing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/reference/silencing/</guid>
+      <description>
+
+&lt;p&gt;Follow these instructions to &lt;strong&gt;silence&lt;/strong&gt; or &lt;strong&gt;unsilence&lt;/strong&gt; an element.&lt;/p&gt;
+
+&lt;h2 id=&#34;silence-a-check&#34;&gt;Silence a check&lt;/h2&gt;
+
+&lt;h3 id=&#34;across-a-datacenter&#34;&gt;Across a datacenter&lt;/h3&gt;
+
+&lt;p&gt;You can silence a check for a given datacenter by selecting one or multiple checks on the
+&lt;em&gt;checks view&lt;/em&gt; and clicking on the &lt;strong&gt;Silence/Unsilence&lt;/strong&gt; action within the &lt;strong&gt;Bulk Actions&lt;/strong&gt;
+dropdown menu.&lt;/p&gt;
+
+&lt;h3 id=&#34;for-a-particular-client&#34;&gt;For a particular client&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.uchiwa.io/reference/clients/#view-a-client&#34;&gt;Access the client view for this client&lt;/a&gt;
+and click on the silence icon corresponding to the check on the right panel.&lt;/p&gt;
+
+&lt;h2 id=&#34;silence-a-client&#34;&gt;Silence a client&lt;/h2&gt;
+
+&lt;p&gt;You can silence a client from the &lt;strong&gt;client view&lt;/strong&gt;, &lt;strong&gt;clients view&lt;/strong&gt; and
+&lt;strong&gt;events view&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;silence-an-event&#34;&gt;Silence an event&lt;/h2&gt;
+
+&lt;p&gt;You can silence an event from the &lt;strong&gt;events view&lt;/strong&gt; or the &lt;strong&gt;client view&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;silence-a-subscription&#34;&gt;Silence a subscription&lt;/h2&gt;
+
+&lt;p&gt;You can silence a subscription for a given datacenter by clicking on the
+&lt;strong&gt;Add&lt;/strong&gt; button in the table header, within the &lt;strong&gt;silenced&lt;/strong&gt; view.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Health API</title>
+      <link>https://docs.uchiwa.io/api/health/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/api/health/</guid>
+      <description>
+
+&lt;h2 id=&#34;health-get&#34;&gt;/health (GET)&lt;/h2&gt;
+
+&lt;p&gt;Returns both Uchiwa and Sensu API status&lt;/p&gt;
+
+&lt;h3 id=&#34;response-example-status-200&#34;&gt;Response Example (Status 200)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;uchiwa&amp;quot;: &amp;quot;ok&amp;quot;,
+  &amp;quot;sensu&amp;quot;: {
+    &amp;quot;us-east-1&amp;quot;: {
+      &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot;
+    },
+    &amp;quot;us-west-1&amp;quot;:{
+      &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;response-codes&#34;&gt;Response Codes&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;HTTP Status Code&lt;/th&gt;
+&lt;th&gt;Reason&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;200&lt;/td&gt;
+&lt;td&gt;All the services are working&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;503&lt;/td&gt;
+&lt;td&gt;One of the service is unavailable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;health-service&#34;&gt;/health/{service}&lt;/h2&gt;
+
+&lt;p&gt;Returns status of &lt;strong&gt;Sensu API&lt;/strong&gt; or &lt;strong&gt;Uchiwa&lt;/strong&gt; service.&lt;/p&gt;
+
+&lt;h3 id=&#34;response-example-status-200-1&#34;&gt;Response Example (Status 200)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;us-east-1&amp;quot;: {
+  &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot;
+},
+&amp;quot;us-west-1&amp;quot;:{
+  &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;parameters&#34;&gt;Parameters&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;service&lt;/td&gt;
+&lt;td&gt;name of the service; either &lt;code&gt;sensu&lt;/code&gt; or &lt;code&gt;uchiwa&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;response-codes-1&#34;&gt;Response Codes&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;HTTP Status Code&lt;/th&gt;
+&lt;th&gt;Reason&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;200&lt;/td&gt;
+&lt;td&gt;The service is working&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;503&lt;/td&gt;
+&lt;td&gt;The service is unavailable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Contributing</title>
+      <link>https://docs.uchiwa.io/contributing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/contributing/</guid>
+      <description>
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&#34;backend&#34;&gt;Backend&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.uchiwa.io/getting-started/installation/#from-source&#34;&gt;Follow these instructions&lt;/a&gt;
+for the Go backend.&lt;/p&gt;
+
+&lt;h3 id=&#34;frontend&#34;&gt;Frontend&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Optional&lt;/em&gt;. If you wish to modify the frontend components, you&amp;rsquo;ll need to follow
+these additional instructions:&lt;/p&gt;
+
+&lt;p&gt;Clone the &lt;a href=&#34;https://github.com/sensu/uchiwa-web&#34;&gt;uchiwa-web&lt;/a&gt; repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git clone git@github.com:sensu/uchiwa-web.git &amp;amp;&amp;amp; cd uchiwa-web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install third-party libraries:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;npm install # Standard user
+npm install --unsafe-perm # Root user
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create a global link for uchiwa-web:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;bower link
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Move to your uchiwa repository directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cd $GOPATH/src/github.com/sensu/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Uninstall the uchiwa-web bower component if previously installed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;bower uninstall uchiwa-web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Point the bower component uchiwa-web to the previously created link&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;bower link uchiwa-web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;development&#34;&gt;Development&lt;/h2&gt;
+
+&lt;h3 id=&#34;backend-1&#34;&gt;Backend&lt;/h3&gt;
+
+&lt;p&gt;Run the program:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go run uchiwa.go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt;: You&amp;rsquo;ll need to relaunch this command if you modify the source code
+to apply changes.&lt;/p&gt;
+
+&lt;h3 id=&#34;frontend-1&#34;&gt;Frontend&lt;/h3&gt;
+
+&lt;p&gt;Generate &lt;strong&gt;CSS&lt;/strong&gt; files from &lt;strong&gt;Sass&lt;/strong&gt; templates:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grunt sass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;testing&#34;&gt;Testing&lt;/h2&gt;
+
+&lt;h3 id=&#34;backend-2&#34;&gt;Backend&lt;/h3&gt;
+
+&lt;p&gt;Run the unit tests:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go test -v ./...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;frontend-2&#34;&gt;Frontend&lt;/h3&gt;
+
+&lt;p&gt;Run linting and unit tests:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grunt
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

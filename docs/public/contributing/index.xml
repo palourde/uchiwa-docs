@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contributing-rsses on Uchiwa Documentation</title>
+    <link>https://docs.uchiwa.io/contributing/index.xml</link>
+    <description>Recent content in Contributing-rsses on Uchiwa Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Released under the MIT license</copyright>
+    <atom:link href="https://docs.uchiwa.io/contributing/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Contributing</title>
+      <link>https://docs.uchiwa.io/contributing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/contributing/</guid>
+      <description>
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&#34;backend&#34;&gt;Backend&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.uchiwa.io/getting-started/installation/#from-source&#34;&gt;Follow these instructions&lt;/a&gt;
+for the Go backend.&lt;/p&gt;
+
+&lt;h3 id=&#34;frontend&#34;&gt;Frontend&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Optional&lt;/em&gt;. If you wish to modify the frontend components, you&amp;rsquo;ll need to follow
+these additional instructions:&lt;/p&gt;
+
+&lt;p&gt;Clone the &lt;a href=&#34;https://github.com/sensu/uchiwa-web&#34;&gt;uchiwa-web&lt;/a&gt; repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git clone git@github.com:sensu/uchiwa-web.git &amp;amp;&amp;amp; cd uchiwa-web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install third-party libraries:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;npm install # Standard user
+npm install --unsafe-perm # Root user
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create a global link for uchiwa-web:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;bower link
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Move to your uchiwa repository directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cd $GOPATH/src/github.com/sensu/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Uninstall the uchiwa-web bower component if previously installed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;bower uninstall uchiwa-web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Point the bower component uchiwa-web to the previously created link&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;bower link uchiwa-web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;development&#34;&gt;Development&lt;/h2&gt;
+
+&lt;h3 id=&#34;backend-1&#34;&gt;Backend&lt;/h3&gt;
+
+&lt;p&gt;Run the program:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go run uchiwa.go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt;: You&amp;rsquo;ll need to relaunch this command if you modify the source code
+to apply changes.&lt;/p&gt;
+
+&lt;h3 id=&#34;frontend-1&#34;&gt;Frontend&lt;/h3&gt;
+
+&lt;p&gt;Generate &lt;strong&gt;CSS&lt;/strong&gt; files from &lt;strong&gt;Sass&lt;/strong&gt; templates:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grunt sass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;testing&#34;&gt;Testing&lt;/h2&gt;
+
+&lt;h3 id=&#34;backend-2&#34;&gt;Backend&lt;/h3&gt;
+
+&lt;p&gt;Run the unit tests:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go test -v ./...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;frontend-2&#34;&gt;Frontend&lt;/h3&gt;
+
+&lt;p&gt;Run linting and unit tests:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grunt
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
