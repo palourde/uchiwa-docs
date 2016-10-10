@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Getting-started-rsses on Uchiwa Documentation</title>
-    <link>http://palourde.github.io/uchiwa-docs/getting-started/index.xml</link>
+    <link>http://docs.uchiwa.io/getting-started/index.xml</link>
     <description>Recent content in Getting-started-rsses on Uchiwa Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <atom:link href="http://palourde.github.io/uchiwa-docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://docs.uchiwa.io/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Basic Concepts</title>
-      <link>http://palourde.github.io/uchiwa-docs/getting-started/basic-concepts/</link>
+      <link>http://docs.uchiwa.io/getting-started/basic-concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://palourde.github.io/uchiwa-docs/getting-started/basic-concepts/</guid>
+      <guid>http://docs.uchiwa.io/getting-started/basic-concepts/</guid>
       <description>
 
 &lt;h2 id=&#34;datacenter&#34;&gt;Datacenter&lt;/h2&gt;
@@ -30,10 +30,10 @@ Datacenters can be used, for example, to organize physical datacenters or enviro
     
     <item>
       <title>Installation</title>
-      <link>http://palourde.github.io/uchiwa-docs/getting-started/installation/</link>
+      <link>http://docs.uchiwa.io/getting-started/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://palourde.github.io/uchiwa-docs/getting-started/installation/</guid>
+      <guid>http://docs.uchiwa.io/getting-started/installation/</guid>
       <description>
 
 &lt;h2 id=&#34;manual-installation&#34;&gt;Manual Installation&lt;/h2&gt;
@@ -165,16 +165,16 @@ npm install --production --unsafe-perm # Root user
 
 &lt;h3 id=&#34;developping&#34;&gt;Developping&lt;/h3&gt;
 
-&lt;p&gt;See the &lt;a href=&#34;http://palourde.github.io/uchiwa-docs/contributing/&#34;&gt;Contributing documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&#34;http://docs.uchiwa.io/contributing/&#34;&gt;Contributing documentation&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Configuration</title>
-      <link>http://palourde.github.io/uchiwa-docs/getting-started/configuration/</link>
+      <link>http://docs.uchiwa.io/getting-started/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://palourde.github.io/uchiwa-docs/getting-started/configuration/</guid>
+      <guid>http://docs.uchiwa.io/getting-started/configuration/</guid>
       <description>
 
 &lt;h2 id=&#34;configuration-load-order&#34;&gt;Configuration Load Order&lt;/h2&gt;
@@ -386,14 +386,14 @@ npm install --production --unsafe-perm # Root user
 &lt;td&gt;auth&lt;/td&gt;
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;hash&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://palourde.github.io/uchiwa-docs/guides/high-availability/#uchiwa-high-availability&#34;&gt;See the High Availability documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://docs.uchiwa.io/guides/high-availability/#uchiwa-high-availability&#34;&gt;See the High Availability documentation&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;ssl&lt;/td&gt;
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;hash&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;http://palourde.github.io/uchiwa-docs/guides/security/#https-encryption&#34;&gt;See the HTTPS Encryption documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://docs.uchiwa.io/guides/security/#https-encryption&#34;&gt;See the HTTPS Encryption documentation&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -445,7 +445,7 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;td&gt;password&lt;/td&gt;
 &lt;td&gt;true&lt;/td&gt;
 &lt;td&gt;string&lt;/td&gt;
-&lt;td&gt;Password of the user. Also see the &lt;a href=&#34;http://palourde.github.io/uchiwa-docs/guides/security/#encrypted-passwords&#34;&gt;Encrypted Passwords documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Password of the user. Also see the &lt;a href=&#34;http://docs.uchiwa.io/guides/security/#encrypted-passwords&#34;&gt;Encrypted Passwords documentation&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;

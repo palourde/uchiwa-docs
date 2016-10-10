@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guides-rsses on Uchiwa Documentation</title>
-    <link>http://palourde.github.io/uchiwa-docs/guides/index.xml</link>
+    <link>http://docs.uchiwa.io/guides/index.xml</link>
     <description>Recent content in Guides-rsses on Uchiwa Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <atom:link href="http://palourde.github.io/uchiwa-docs/guides/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://docs.uchiwa.io/guides/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>High Availability</title>
-      <link>http://palourde.github.io/uchiwa-docs/guides/high-availability/</link>
+      <link>http://docs.uchiwa.io/guides/high-availability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://palourde.github.io/uchiwa-docs/guides/high-availability/</guid>
+      <guid>http://docs.uchiwa.io/guides/high-availability/</guid>
       <description>
 
 &lt;h2 id=&#34;datacenters-high-availability&#34;&gt;Datacenters High Availability&lt;/h2&gt;
@@ -23,7 +23,7 @@
 and rudimentary &lt;strong&gt;load balancing&lt;/strong&gt; between these APIs.&lt;/p&gt;
 
 &lt;p&gt;To get started with this feature, you&amp;rsquo;ll simply need to define at least two
-&lt;a href=&#34;http://palourde.github.io/uchiwa-docs/getting-started/configuration/#datacenters-configuration-sensu&#34;&gt;Sensu objects&lt;/a&gt;
+&lt;a href=&#34;http://docs.uchiwa.io/getting-started/configuration/#datacenters-configuration-sensu&#34;&gt;Sensu objects&lt;/a&gt;
  with the &lt;strong&gt;same name&lt;/strong&gt;. Here&amp;rsquo;s a basic example:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
@@ -86,10 +86,10 @@ instances of Uchiwa together, you will need to adjust your configuration.&lt;/p&
     
     <item>
       <title>Security</title>
-      <link>http://palourde.github.io/uchiwa-docs/guides/security/</link>
+      <link>http://docs.uchiwa.io/guides/security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://palourde.github.io/uchiwa-docs/guides/security/</guid>
+      <guid>http://docs.uchiwa.io/guides/security/</guid>
       <description>
 
 &lt;h2 id=&#34;encrypted-passwords&#34;&gt;Encrypted Passwords&lt;/h2&gt;
@@ -171,10 +171,10 @@ path of the keys you just generated:&lt;/p&gt;
     
     <item>
       <title>Troubleshooting</title>
-      <link>http://palourde.github.io/uchiwa-docs/guides/troubleshooting/</link>
+      <link>http://docs.uchiwa.io/guides/troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://palourde.github.io/uchiwa-docs/guides/troubleshooting/</guid>
+      <guid>http://docs.uchiwa.io/guides/troubleshooting/</guid>
       <description>
 
 &lt;h2 id=&#34;authentication&#34;&gt;Authentication&lt;/h2&gt;
@@ -183,7 +183,7 @@ path of the keys you just generated:&lt;/p&gt;
 
 &lt;p&gt;In order to remove Uchiwa authentication, you simply need to remove or
 leave empty the &lt;strong&gt;user&lt;/strong&gt;, &lt;strong&gt;pass&lt;/strong&gt; and &lt;strong&gt;users&lt;/strong&gt; attributes from the
-&lt;a href=&#34;http://palourde.github.io/uchiwa-docs/getting-started/configuration/#uchiwa-configuration&#34;&gt;Uchiwa Configuration&lt;/a&gt;
+&lt;a href=&#34;http://docs.uchiwa.io/getting-started/configuration/#uchiwa-configuration&#34;&gt;Uchiwa Configuration&lt;/a&gt;
 on your configuration file.&lt;/p&gt;
 
 &lt;h2 id=&#34;checks&#34;&gt;Checks&lt;/h2&gt;
@@ -209,14 +209,14 @@ previous question for more details.&lt;/p&gt;
 &lt;p&gt;If you configured a user/pass authentication on your Sensu API, you need to add
 these details to your Uchiwa configuration by adding the user and pass attributes
 in the proper datacenter object within the &lt;em&gt;sensu&lt;/em&gt; array, as shown on the
-&lt;a href=&#34;http://palourde.github.io/uchiwa-docs/getting-started/configuration/#datacenters-configuration-sensu&#34;&gt;Datacenters Configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;http://docs.uchiwa.io/getting-started/configuration/#datacenters-configuration-sensu&#34;&gt;Datacenters Configuration&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;i-see-the-error-message-x509-certificate-signed-by-unknown-authority&#34;&gt;I see the error message &lt;em&gt;x509: certificate signed by unknown authority&lt;/em&gt;&lt;/h3&gt;
 
 &lt;p&gt;By default, Uchiwa will refuse to make any connection to an API with an invalid
 SSL certificate, therefore it needs to be explicitly allowed.
 See the &lt;strong&gt;insecure&lt;/strong&gt; attribute in the
-&lt;a href=&#34;http://palourde.github.io/uchiwa-docs/getting-started/configuration/#datacenters-configuration-sensu&#34;&gt;Datacenters Configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;http://docs.uchiwa.io/getting-started/configuration/#datacenters-configuration-sensu&#34;&gt;Datacenters Configuration&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
 
@@ -226,7 +226,7 @@ See the &lt;strong&gt;insecure&lt;/strong&gt; attribute in the
 packaged into DEB and RPM packages. If you wish to compile the binary for an
 another operating system and compilation architecture,
 refer yourself to the
-&lt;a href=&#34;http://palourde.github.io/uchiwa-docs/getting-started/installation/#from-source&#34;&gt;Installation documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;http://docs.uchiwa.io/getting-started/installation/#from-source&#34;&gt;Installation documentation&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

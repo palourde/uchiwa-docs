@@ -2,63 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/</loc>
+    <loc>http://docs.uchiwa.io/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/</loc>
+    <loc>http://docs.uchiwa.io/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/getting-started/basic-concepts/</loc>
+    <loc>http://docs.uchiwa.io/getting-started/basic-concepts/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/getting-started/installation/</loc>
+    <loc>http://docs.uchiwa.io/getting-started/installation/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/getting-started/configuration/</loc>
+    <loc>http://docs.uchiwa.io/getting-started/configuration/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/guides/high-availability/</loc>
+    <loc>http://docs.uchiwa.io/guides/high-availability/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/guides/security/</loc>
+    <loc>http://docs.uchiwa.io/guides/security/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/guides/troubleshooting/</loc>
+    <loc>http://docs.uchiwa.io/guides/troubleshooting/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/reference/aggregates/</loc>
+    <loc>http://docs.uchiwa.io/reference/aggregates/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/reference/checks/</loc>
+    <loc>http://docs.uchiwa.io/reference/checks/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/reference/clients/</loc>
+    <loc>http://docs.uchiwa.io/reference/clients/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/reference/events/</loc>
+    <loc>http://docs.uchiwa.io/reference/events/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/reference/silencing/</loc>
+    <loc>http://docs.uchiwa.io/reference/silencing/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/api/health/</loc>
+    <loc>http://docs.uchiwa.io/api/health/</loc>
   </url>
   
   <url>
-    <loc>http://palourde.github.io/uchiwa-docs/contributing/</loc>
+    <loc>http://docs.uchiwa.io/contributing/</loc>
   </url>
   
 </urlset>
