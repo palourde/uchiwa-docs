@@ -33,9 +33,9 @@ Uchiwa loads configuration from these sources in the following order:
 ```
 
 ## Datacenters Configuration (Sensu)
-The *sensu* array contains an object for every Sensu API, represented as **datacenters** in Uchiwa.
+The *sensu* array contains a hash for every Sensu API, represented as **datacenters** in Uchiwa.
 
-Each object can contain the following attributes:
+Each hash can contain the following attributes:
 ```json
 {
   "sensu": [
@@ -69,7 +69,7 @@ pass | false | string | Password of the Sensu API.
 
 ## Uchiwa Configuration
 
-The *uchiwa* object can contain the following attributes:
+The *uchiwa* hash can contain the following attributes:
 
 ```json
 {
@@ -95,9 +95,9 @@ loglevel | false | string | Level of logging to show after Uchiwa has started. T
 refresh | false | integer | Determines the interval to pull the Sensu APIs, in seconds. The default value is `10`.
 user | false | string | Username of the Uchiwa dashboard. Remove to disable authentication.
 pass | false | string | Password of the Uchiwa dashboard. Remove to disable authentication.
-users | false | object | [See the Mutliple Users documentation]({{< relref "#multiple-users" >}}). Has precedence over the **user** attribute.
-auth | false | object | TODO: link to static RSA keys in security
-ssl | false | object | TODO: link to ssl in security
+users | false | hash | [See the Mutliple Users documentation]({{< relref "#multiple-users" >}}). Has precedence over the **user** attribute.
+auth | false | hash | [See the High Availability documentation]({{< relref "guides/high-availability.md#uchiwa-high-availability" >}}).
+ssl | false | hash | [See the HTTPS Encryption documentation]({{< relref "guides/security.md#https-encryption" >}}).
 
 ### Multiple Users
 
@@ -128,7 +128,7 @@ users attribute. The **users** attribute has precedence over the **user** attrib
 Key     | Required | Type | Description
 --------|----------|------|------
 username | true | string | Username of the user.
-password | true | string | Password of the user. TODO: link to encrypted password in security
+password | true | string | Password of the user. Also see the [Encrypted Passwords documentation]({{< relref "guides/security.md#encrypted-passwords" >}}).
 accessToken | false | string | A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. [See Generating an access token]({{< relref "#generating-an-access-token" >}}).
 readonly | false | boolean | Restrict write access to the dashboard (create stashes, delete clients, etc.). The default value is `false`.
 

@@ -6,7 +6,7 @@ weight: 0
 
 ## What is Uchiwa?
 
-Uchiwa is simple yet effective open-source dashboard for the
+Uchiwa is a simple yet effective open-source dashboard for the
 [Sensu](https://sensuapp.org/) monitoring framework.
 
 With Uchiwa, you are able to enhance your monitoring platform:

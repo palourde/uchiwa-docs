@@ -90,7 +90,7 @@ http://localhost:3000
 {{< note title="Note" >}}
 This documentation provides instructions for advanced users who want to build
 their own packages. Otherwise, we highly recommend to use the system packages
-in order to get stable releases and easier installation.
+in order to get stable releases and an easier installation experience.
 {{< /note >}}
 
 ### Prerequisites
@@ -129,4 +129,4 @@ Start Uchiwa
 ```
 
 ### Developping
-See the [contributing documentation]({{< relref "contributing/index.md" >}}).
+See the [Contributing documentation]({{< relref "contributing/index.md" >}}).
