@@ -4,9 +4,9 @@ Documentation for the Uchiwa dashboard.
 
 ## How to contribute
 
-* Assuming you have Python already, install Mkdocs: `pip install mkdocs`
-* Start the web server: `mkdocs serve`
-* Then go view the docs at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+* Install Hugo: https://gohugo.io/overview/quickstart/
+* Start the web server: `hugo serve`
+* Then go view the docs at [http://127.0.0.1:1313/](http://127.0.0.1:1313/)
 * Submit a pull request when you are done!
 
 ## License
