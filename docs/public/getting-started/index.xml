@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting-started-rsses on Uchiwa Documentation</title>
+    <link>https://docs.uchiwa.io/getting-started/index.xml</link>
+    <description>Recent content in Getting-started-rsses on Uchiwa Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Released under the MIT license</copyright>
+    <atom:link href="https://docs.uchiwa.io/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Basic Concepts</title>
+      <link>https://docs.uchiwa.io/getting-started/basic-concepts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/getting-started/basic-concepts/</guid>
+      <description>
+
+&lt;h2 id=&#34;datacenter&#34;&gt;Datacenter&lt;/h2&gt;
+
+&lt;p&gt;A datacenter is a logical representation of a Sensu cluster.
+Datacenters can be used, for example, to organize physical datacenters or environements.&lt;/p&gt;
+
+&lt;h2 id=&#34;sensu&#34;&gt;Sensu&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://sensuapp.org/docs/latest/overview&#34;&gt;Sensu documentation&lt;/a&gt; for more concepts.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>https://docs.uchiwa.io/getting-started/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/getting-started/installation/</guid>
+      <description>
+
+&lt;h2 id=&#34;manual-installation&#34;&gt;Manual Installation&lt;/h2&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;https://uchiwa.io/#download&#34;&gt;download page&lt;/a&gt; to download the packages.&lt;/p&gt;
+
+&lt;h2 id=&#34;debian-ubuntu&#34;&gt;Debian/Ubuntu&lt;/h2&gt;
+
+&lt;p&gt;Install the GPG public key:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | sudo apt-key add -
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create an APT configuration file at &lt;code&gt;/etc/apt/sources.list.d/sensu.list&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;echo &amp;quot;deb     https://sensu.global.ssl.fastly.net/apt sensu main&amp;quot; | sudo tee /etc/apt/sources.list.d/sensu.list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update APT:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install Uchiwa:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo apt-get install uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;rhel-centos&#34;&gt;RHEL/CentOS&lt;/h2&gt;
+
+&lt;p&gt;Create the YUM repository configuration file for the Sensu Core repository at &lt;code&gt;/etc/yum.repos.d/sensu.repo&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;echo &#39;[sensu]
+name=sensu
+baseurl=http://repositories.sensuapp.org/yum/$basearch/
+gpgcheck=0
+enabled=1&#39; | sudo tee /etc/yum.repos.d/sensu.repo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install Sensu:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo yum install sensu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;using-configuration-management&#34;&gt;Using Configuration Management&lt;/h2&gt;
+
+&lt;p&gt;Chef: &lt;a href=&#34;https://github.com/sensu/uchiwa-chef&#34;&gt;uchiwa-chef&lt;/a&gt;&lt;br /&gt;
+Puppet: &lt;a href=&#34;https://github.com/Yelp/puppet-uchiwa&#34;&gt;puppet-uchiwa&lt;/a&gt;&lt;br /&gt;
+Ansible: &lt;a href=&#34;https://github.com/queeno/ansible-uchiwa&#34;&gt;ansible-uchiwa&lt;/a&gt;&lt;br /&gt;
+SaltStack: &lt;a href=&#34;https://github.com/saltstack-formulas/sensu-formula&#34;&gt;sensu-formula&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;using-docker&#34;&gt;Using Docker&lt;/h2&gt;
+
+&lt;p&gt;Uchiwa comes pre-packaged in a &lt;a href=&#34;https://hub.docker.com/r/uchiwa/uchiwa/&#34;&gt;Docker container&lt;/a&gt; for easy deployment.&lt;/p&gt;
+
+&lt;p&gt;Download the official Uchiwa Docker image:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;docker pull uchiwa/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create a folder that will contain the configuration files:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;mkdir ~/uchiwa-config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create and adjust the main configuration file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;vi ~/uchiwa-config/config.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Start the Docker container:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;docker run -d -p 3000:3000 -v ~/uchiwa-config:/config uchiwa/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Browse Uchiwa:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;http://localhost:3000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;from-source&#34;&gt;From Source&lt;/h2&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+&lt;p&gt;This documentation provides instructions for advanced users who want to build
+their own packages. Otherwise, we highly recommend to use the system packages
+in order to get stable releases and an easier installation experience.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://golang.org/doc/install&#34;&gt;Go &amp;gt;= 1.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodejs.org/en/download/package-manager/&#34;&gt;NodeJS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;backend&#34;&gt;Backend&lt;/h3&gt;
+
+&lt;p&gt;Download the source code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go get -d github.com/sensu/uchiwa &amp;amp;&amp;amp; cd $GOPATH/src/github.com/sensu/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Build the Uchiwa binary:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;go build -o build/uchiwa . # Build for your current system
+GOOS=linux GOARCH=amd64 go build -o build/uchiwa . # Cross Compilation, see Go documentation
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;front-end-assets&#34;&gt;Front-end Assets&lt;/h3&gt;
+
+&lt;p&gt;Install the front-end assets:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;npm install --production # Standard user
+npm install --production --unsafe-perm # Root user
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;running-uchiwa-locally&#34;&gt;Running Uchiwa Locally&lt;/h3&gt;
+
+&lt;p&gt;Adjust your configuration:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cp config.json.example config.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Start Uchiwa&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;./build/uchiwa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;developping&#34;&gt;Developping&lt;/h3&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;https://docs.uchiwa.io/contributing/&#34;&gt;Contributing documentation&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://docs.uchiwa.io/getting-started/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/getting-started/configuration/</guid>
+      <description>
+
+&lt;h2 id=&#34;configuration-load-order&#34;&gt;Configuration Load Order&lt;/h2&gt;
+
+&lt;p&gt;Uchiwa loads configuration from these sources in the following order:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Uchiwa loads configuration from the configuration file (by default, this is located at &lt;code&gt;/etc/sensu/uchiwa.json&lt;/code&gt; which is provided with the &lt;code&gt;-c&lt;/code&gt; command line argument).&lt;/li&gt;
+&lt;li&gt;Uchiwa loads configuration snippets from configuration files located in one or multiple Uchiwa configuration directories (by default, this is the &lt;code&gt;/etc/sensu/dashboard.d/&lt;/code&gt; directory which is provided with the &lt;code&gt;-d&lt;/code&gt; command line argument).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;minimal-configuration&#34;&gt;Minimal Configuration&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;sensu&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;Site 1&amp;quot;,
+      &amp;quot;host&amp;quot;: &amp;quot;api1.example.com&amp;quot;,
+      &amp;quot;port&amp;quot;: 4567
+    }
+  ],
+  &amp;quot;uchiwa&amp;quot;: {
+    &amp;quot;host&amp;quot;: &amp;quot;0.0.0.0&amp;quot;,
+    &amp;quot;port&amp;quot;: 3000
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;datacenters-configuration-sensu&#34;&gt;Datacenters Configuration (Sensu)&lt;/h2&gt;
+
+&lt;p&gt;The &lt;em&gt;sensu&lt;/em&gt; array contains a hash for every Sensu API, represented as &lt;strong&gt;datacenters&lt;/strong&gt; in Uchiwa.&lt;/p&gt;
+
+&lt;p&gt;Each hash can contain the following attributes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;sensu&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;API Name&amp;quot;,
+      &amp;quot;host&amp;quot;: &amp;quot;127.0.0.1&amp;quot;,
+      &amp;quot;port&amp;quot;: 443,
+      &amp;quot;ssl&amp;quot;: true,
+      &amp;quot;insecure&amp;quot;: true,
+      &amp;quot;path&amp;quot;: &amp;quot;/site2&amp;quot;,
+      &amp;quot;timeout&amp;quot;: 5,
+      &amp;quot;user&amp;quot;: &amp;quot;admin&amp;quot;,
+      &amp;quot;pass&amp;quot;: &amp;quot;secret&amp;quot;
+    }
+  ]  
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Name of the Sensu API (used as datacenter name). If empty, a random one will be generated.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;host&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Hostname or IP address of the Sensu API.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;port&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;Port of the Sensu API. The default value is &lt;code&gt;4567&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ssl&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;Determines whether or not to use the HTTPS protocol. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;insecure&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;Determines whether or not to accept an insecure SSL certificate. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;path&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Path of the Sensu API.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;timeout&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;Timeout for the Sensu API, in seconds. The default value is &lt;code&gt;5&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;user&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Username of the Sensu API.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pass&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Password of the Sensu API.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;uchiwa-configuration&#34;&gt;Uchiwa Configuration&lt;/h2&gt;
+
+&lt;p&gt;The &lt;em&gt;uchiwa&lt;/em&gt; hash can contain the following attributes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;uchiwa&amp;quot;: {
+    &amp;quot;host&amp;quot;: &amp;quot;0.0.0.0&amp;quot;,
+    &amp;quot;port&amp;quot;: 3000,
+    &amp;quot;loglevel&amp;quot;: &amp;quot;info&amp;quot;,
+    &amp;quot;refresh&amp;quot;: 10,
+    &amp;quot;user&amp;quot;: &amp;quot;admin&amp;quot;,
+    &amp;quot;pass&amp;quot;: &amp;quot;secret&amp;quot;,
+    &amp;quot;users&amp;quot;: {...},
+    &amp;quot;auth&amp;quot;: {...},
+    &amp;quot;ssl&amp;quot;: {...}
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;host&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Address on which Uchiwa will listen. The default value is &lt;code&gt;0.0.0.0&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;port&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;Port on which Uchiwa will listen. The default value is &lt;code&gt;3000&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;loglevel&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Level of logging to show after Uchiwa has started. The default value is &lt;code&gt;info&lt;/code&gt;. Allowed values are &lt;code&gt;trace&lt;/code&gt;, &lt;code&gt;debug&lt;/code&gt;, &lt;code&gt;info&lt;/code&gt;, &lt;code&gt;warn&lt;/code&gt;, &lt;code&gt;fatal&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;refresh&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;Determines the interval to pull the Sensu APIs, in seconds. The default value is &lt;code&gt;10&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;user&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Username of the Uchiwa dashboard. Remove to disable authentication.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pass&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Password of the Uchiwa dashboard. Remove to disable authentication.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;users&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;hash&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#multiple-users&#34;&gt;See the Mutliple Users documentation&lt;/a&gt;. Has precedence over the &lt;strong&gt;user&lt;/strong&gt; attribute.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;auth&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;hash&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.uchiwa.io/guides/high-availability/#uchiwa-high-availability&#34;&gt;See the High Availability documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ssl&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;hash&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.uchiwa.io/guides/security/#https-encryption&#34;&gt;See the HTTPS Encryption documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;multiple-users&#34;&gt;Multiple Users&lt;/h3&gt;
+
+&lt;p&gt;You can define multiple users, including read-only users, within your
+users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence over the &lt;strong&gt;user&lt;/strong&gt; attribute.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;uchiwa&amp;quot;: {
+    &amp;quot;users&amp;quot;: [
+      {
+        &amp;quot;username&amp;quot; : &amp;quot;admin&amp;quot;,
+        &amp;quot;password&amp;quot;: &amp;quot;secret&amp;quot;,
+        &amp;quot;accessToken&amp;quot;: &amp;quot;vFzX6rFDAn3G9ieuZ4ZhN-XrfdRow4Hd5CXXOUZ5NsTw4h3k3l4jAw__&amp;quot;,
+        &amp;quot;readonly&amp;quot;: false
+      },
+      {
+        &amp;quot;username&amp;quot; : &amp;quot;guest&amp;quot;,
+        &amp;quot;password&amp;quot;: &amp;quot;secret&amp;quot;,
+        &amp;quot;accessToken&amp;quot;: &amp;quot;hrKMW3uIt2RGxuMIoXQ-bVp-TL1MP4St5Hap3KAanMxI3OovFV48ww__&amp;quot;,
+        &amp;quot;readonly&amp;quot;: true
+      }
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;username&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Username of the user.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;password&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Password of the user. Also see the &lt;a href=&#34;https://docs.uchiwa.io/guides/security/#encrypted-passwords&#34;&gt;Encrypted Passwords documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;accessToken&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. &lt;a href=&#34;#generating-an-access-token&#34;&gt;See Generating an access token&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;readonly&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;Restrict write access to the dashboard (create stashes, delete clients, etc.). The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;generating-an-access-token&#34;&gt;Generating an access token&lt;/h3&gt;
+
+&lt;p&gt;An access token must only contain friendly URL characters. We recommend using
+the following command to create a proper token:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openssl rand -base64 40 |  tr -- &#39;+=/&#39; &#39;-_~&#39;```
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

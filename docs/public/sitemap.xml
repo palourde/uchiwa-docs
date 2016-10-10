@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://docs.uchiwa.io/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/getting-started/basic-concepts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/getting-started/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/getting-started/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/guides/high-availability/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/guides/security/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/guides/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/reference/aggregates/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/reference/checks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/reference/clients/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/reference/events/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/reference/silencing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/api/health/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/contributing/</loc>
+  </url>
+  
+</urlset>
