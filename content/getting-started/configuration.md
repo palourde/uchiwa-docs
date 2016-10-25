@@ -136,5 +136,5 @@ readonly | false | boolean | Restrict write access to the dashboard (create stas
 An access token must only contain friendly URL characters. We recommend using
 the following command to create a proper token:
 ```
-openssl rand -base64 40 |  tr -- '+=/' '-_~'```
+openssl rand -base64 40 |  tr -- '+=/' '-_~'
 ```
