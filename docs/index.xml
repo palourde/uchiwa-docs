@@ -501,7 +501,7 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;p&gt;An access token must only contain friendly URL characters. We recommend using
 the following command to create a proper token:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;openssl rand -base64 40 |  tr -- &#39;+=/&#39; &#39;-_~&#39;```
+&lt;pre&gt;&lt;code&gt;openssl rand -base64 40 |  tr -- &#39;+=/&#39; &#39;-_~&#39;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
