@@ -89,7 +89,7 @@ The *uchiwa* hash can contain the following attributes:
 
 Key     | Required | Type | Description
 --------|----------|------|------
-host | false | string | Address on which Uchiwa will listen. The default value is `0.0.0.0`.
+host | false | string | Address on which Uchiwa will listen. The default value is `0.0.0.0`. To use an IPv6 address, use square brackets (e.g. `[::1]`)
 port | false | integer | Port on which Uchiwa will listen. The default value is `3000`.
 loglevel | false | string | Level of logging to show after Uchiwa has started. The default value is `info`. Allowed values are `trace`, `debug`, `info`, `warn`, `fatal`
 refresh | false | integer | Determines the interval to pull the Sensu APIs, in seconds. The default value is `10`.

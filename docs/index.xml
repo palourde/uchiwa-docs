@@ -369,7 +369,7 @@ npm install --production --unsafe-perm # Root user
 &lt;td&gt;host&lt;/td&gt;
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;string&lt;/td&gt;
-&lt;td&gt;Address on which Uchiwa will listen. The default value is &lt;code&gt;0.0.0.0&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;Address on which Uchiwa will listen. The default value is &lt;code&gt;0.0.0.0&lt;/code&gt;. To use an IPv6 address, use square brackets (e.g. &lt;code&gt;[::1]&lt;/code&gt;)&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
