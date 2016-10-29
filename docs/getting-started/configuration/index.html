@@ -598,7 +598,8 @@
     &quot;pass&quot;: &quot;secret&quot;,
     &quot;users&quot;: {...},
     &quot;auth&quot;: {...},
-    &quot;ssl&quot;: {...}
+    &quot;ssl&quot;: {...},
+    &quot;useroptions&quot;: {...}
   }
 }
 </code></pre>
@@ -676,6 +677,13 @@
 <td>hash</td>
 <td><a href="https://docs.uchiwa.io/guides/security/#https-encryption">See the HTTPS Encryption documentation</a>.</td>
 </tr>
+
+<tr>
+<td>useroptions</td>
+<td>false</td>
+<td>hash</td>
+<td><a href="#user-options">See the User Options documentation</a>.</td>
+</tr>
 </tbody>
 </table>
 
@@ -741,6 +749,47 @@ users attribute. The <strong>users</strong> attribute has precedence over the <s
 <td>false</td>
 <td>boolean</td>
 <td>Restrict write access to the dashboard (create stashes, delete clients, etc.). The default value is <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="user-options">User Options</h3>
+
+<p>This hash can set various global user options.</p>
+
+<pre><code class="language-json">{
+  &quot;uchiwa&quot;: {
+    &quot;useroptions&quot;: {
+        &quot;disablenoexpiration&quot;: false,
+        &quot;expireonresolvedefault&quot;: true
+    }
+  }
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>disablenoexpiration</td>
+<td>false</td>
+<td>boolean</td>
+<td>Disables the <code>No expiration</code> option from the silence creation page. The default value is <code>false</code>.</td>
+</tr>
+
+<tr>
+<td>expireonresolvedefault</td>
+<td>false</td>
+<td>boolean</td>
+<td>Default value of the <code>Expire on Resolve</code> checkbox on the silence creation page. The default value is <code>false</code>.</td>
 </tr>
 </tbody>
 </table>

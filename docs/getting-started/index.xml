@@ -317,7 +317,8 @@ npm install --production --unsafe-perm # Root user
     &amp;quot;pass&amp;quot;: &amp;quot;secret&amp;quot;,
     &amp;quot;users&amp;quot;: {...},
     &amp;quot;auth&amp;quot;: {...},
-    &amp;quot;ssl&amp;quot;: {...}
+    &amp;quot;ssl&amp;quot;: {...},
+    &amp;quot;useroptions&amp;quot;: {...}
   }
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -395,6 +396,13 @@ npm install --production --unsafe-perm # Root user
 &lt;td&gt;hash&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;https://docs.uchiwa.io/guides/security/#https-encryption&#34;&gt;See the HTTPS Encryption documentation&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;useroptions&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;hash&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#user-options&#34;&gt;See the User Options documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
@@ -460,6 +468,47 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;boolean&lt;/td&gt;
 &lt;td&gt;Restrict write access to the dashboard (create stashes, delete clients, etc.). The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;user-options&#34;&gt;User Options&lt;/h3&gt;
+
+&lt;p&gt;This hash can set various global user options.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;uchiwa&amp;quot;: {
+    &amp;quot;useroptions&amp;quot;: {
+        &amp;quot;disablenoexpiration&amp;quot;: false,
+        &amp;quot;expireonresolvedefault&amp;quot;: true
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;disablenoexpiration&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;Disables the &lt;code&gt;No expiration&lt;/code&gt; option from the silence creation page. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;expireonresolvedefault&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;Default value of the &lt;code&gt;Expire on Resolve&lt;/code&gt; checkbox on the silence creation page. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
