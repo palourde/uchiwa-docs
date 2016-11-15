@@ -318,7 +318,7 @@ npm install --production --unsafe-perm # Root user
     &amp;quot;users&amp;quot;: {...},
     &amp;quot;auth&amp;quot;: {...},
     &amp;quot;ssl&amp;quot;: {...},
-    &amp;quot;useroptions&amp;quot;: {...}
+    &amp;quot;usersOptions&amp;quot;: {...}
   }
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -398,10 +398,10 @@ npm install --production --unsafe-perm # Root user
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;useroptions&lt;/td&gt;
+&lt;td&gt;usersOptions&lt;/td&gt;
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;hash&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;#user-options&#34;&gt;See the User Options documentation&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;#users-options&#34;&gt;See the Users Options documentation&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -472,15 +472,19 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&#34;user-options&#34;&gt;User Options&lt;/h3&gt;
+&lt;h3 id=&#34;users-options&#34;&gt;Users Options&lt;/h3&gt;
 
-&lt;p&gt;This hash can set various global user options.&lt;/p&gt;
+&lt;p&gt;This hash can set various global users options.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
   &amp;quot;uchiwa&amp;quot;: {
-    &amp;quot;useroptions&amp;quot;: {
-        &amp;quot;disablenoexpiration&amp;quot;: false,
-        &amp;quot;expireonresolvedefault&amp;quot;: true
+    &amp;quot;usersOptions&amp;quot;: {
+      &amp;quot;dateFormat&amp;quot;: &amp;quot;YYYY-MM-DD HH:mm:ss&amp;quot;,
+      &amp;quot;defaultExpireOnResolve&amp;quot;: false,
+      &amp;quot;defaultTheme&amp;quot;: &amp;quot;uchiwa-default&amp;quot;,
+      &amp;quot;disableNoExpiration&amp;quot;: false,
+      &amp;quot;logoURL&amp;quot;: &amp;quot;http://127.0.0.1/logo.png&amp;quot;,
+      &amp;quot;requireSilencingReason&amp;quot;: false
     }
   }
 }
@@ -498,17 +502,45 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;disablenoexpiration&lt;/td&gt;
+&lt;td&gt;dateFormat&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Determines the format of dates displayed. Default value is &lt;code&gt;YYYY-MM-DD HH:mm:ss&lt;/code&gt;. See &lt;a href=&#34;http://momentjs.com/docs/#/displaying/format/&#34;&gt;http://momentjs.com/docs/#/displaying/format/&lt;/a&gt; for possible values.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;defaultExpireOnResolve&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;Default value of the &lt;code&gt;Expire on Resolve&lt;/code&gt; checkbox on the silence creation page. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;defaultTheme&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;Determines the default theme to use for new users. Can be overridden at the user level in settings view. Possible values are &lt;code&gt;uchiwa-default&lt;/code&gt; (light theme) and &lt;code&gt;uchiwa-dark&lt;/code&gt; (dark theme). The default value is &lt;code&gt;uchiwa-default&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;disableNoExpiration&lt;/td&gt;
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;boolean&lt;/td&gt;
 &lt;td&gt;Disables the &lt;code&gt;No expiration&lt;/code&gt; option from the silence creation page. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;expireonresolvedefault&lt;/td&gt;
+&lt;td&gt;logoURL&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;URL to a custom logo. Leave empty to use the default logo.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;requireSilencingReason&lt;/td&gt;
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;boolean&lt;/td&gt;
-&lt;td&gt;Default value of the &lt;code&gt;Expire on Resolve&lt;/code&gt; checkbox on the silence creation page. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;Determines whether a reason must be provided or not when creating a silence entry. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

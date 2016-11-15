@@ -85,6 +85,62 @@ instances of Uchiwa together, you will need to adjust your configuration.&lt;/p&
     </item>
     
     <item>
+      <title>Search Queries</title>
+      <link>https://docs.uchiwa.io/guides/search-queries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/guides/search-queries/</guid>
+      <description>
+
+&lt;h2 id=&#34;queries&#34;&gt;Queries&lt;/h2&gt;
+
+&lt;p&gt;The most basic query is composed of a &lt;code&gt;value&lt;/code&gt; but can also contains a &lt;em&gt;field&lt;/em&gt;
+and its &lt;em&gt;value&lt;/em&gt;, in the form of &lt;code&gt;field:value&lt;/code&gt;. When only specifying the &lt;em&gt;value&lt;/em&gt;,
+all fields are tested against it.&lt;/p&gt;
+
+&lt;p&gt;A query can use any field, visible or not, to match a value, such as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;us-west-1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dc:us-west-1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;subscriber:rabbitmq&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;subscription:linux&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;team:webops&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;regular-expressions&#34;&gt;Regular Expressions&lt;/h2&gt;
+
+&lt;p&gt;Javascript&amp;rsquo;s &lt;em&gt;RegExp&lt;/em&gt; object is used to retrieve the matches, thus the following
+special characters are available to use exclusively in the values of a query.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.&lt;/code&gt; - Matches any single character.
+For example, &lt;code&gt;dc:a.stria&lt;/code&gt; matches the datacenter &lt;strong&gt;austria&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;*&lt;/code&gt; - Matches the preceding character 0 or more times.
+For example, &lt;code&gt;dc:can*&lt;/code&gt; matches the datacenters &lt;strong&gt;canada&lt;/strong&gt; and &lt;strong&gt;vatican&lt;/strong&gt;, but
+not &lt;strong&gt;cameroon&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;+&lt;/code&gt; - Matches the preceding character 1 or more times.
+For example, &lt;code&gt;dc:ira+&lt;/code&gt; matches the datacenters &lt;strong&gt;iran&lt;/strong&gt; and &lt;strong&gt;iraq&lt;/strong&gt;, but not
+&lt;strong&gt;ireland&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;?&lt;/code&gt; - Matches the preceding character 0 or 1 time.
+For example, &lt;code&gt;dc:oc?o&lt;/code&gt; matches the datacenter &lt;strong&gt;cameroon&lt;/strong&gt;, but not &lt;strong&gt;morocco&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;^&lt;/code&gt; - Matches beginning of input.
+For example, &lt;code&gt;dc:^por&lt;/code&gt; matches the datacenter &lt;strong&gt;portgual&lt;/strong&gt;, but not
+&lt;strong&gt;singapore&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$&lt;/code&gt; - Matches end of input.
+For example, &lt;code&gt;dc:nea$&lt;/code&gt; matches the datacenter &lt;strong&gt;guinea&lt;/strong&gt;, but not
+&lt;strong&gt;guinea-bissau&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;http://www.w3schools.com/jsref/jsref_obj_regexp.asp&#34;&gt;RegExp Object&lt;/a&gt;
+documentation for possible quantifiers.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Security</title>
       <link>https://docs.uchiwa.io/guides/security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Events - Uchiwa Documentation</title>
+    <title>Search Queries - Uchiwa Documentation</title>
     <meta name="generator" content="Hugo 0.17" />
 
     
     <meta name="description" content="A simple dashboard for the Sensu monitoring framework">
     
-    <link rel="canonical" href="https://docs.uchiwa.io/reference/events/">
+    <link rel="canonical" href="https://docs.uchiwa.io/guides/search-queries/">
     
     <meta name="author" content="Simon Plourde">
     
 
-    <meta property="og:url" content="https://docs.uchiwa.io/reference/events/">
+    <meta property="og:url" content="https://docs.uchiwa.io/guides/search-queries/">
     <meta property="og:title" content="Uchiwa Documentation">
     
     <meta name="apple-mobile-web-app-title" content="Uchiwa Documentation">
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Events
+        Search Queries
       </div>
     </div>
 
@@ -265,11 +265,14 @@
 
 
 
-<a  title="Search Queries" href="https://docs.uchiwa.io/guides/search-queries/">
+<a class="current" title="Search Queries" href="https://docs.uchiwa.io/guides/search-queries/">
 	
 	Search Queries
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
       
@@ -354,14 +357,11 @@
 
 
 
-<a class="current" title="Events" href="https://docs.uchiwa.io/reference/events/">
+<a  title="Events" href="https://docs.uchiwa.io/reference/events/">
 	
 	Events
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
       
@@ -467,26 +467,55 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Events </h1>
+			<h1>Search Queries </h1>
 
 			
 
-<p>To understand events in Sensu, please refer yourself to the
-<a href="https://sensuapp.org/docs/latest/reference/events.html">Sensu documentation</a>.</p>
+<h2 id="queries">Queries</h2>
 
-<h2 id="list-all-events">List All Events</h2>
+<p>The most basic query is composed of a <code>value</code> but can also contains a <em>field</em>
+and its <em>value</em>, in the form of <code>field:value</code>. When only specifying the <em>value</em>,
+all fields are tested against it.</p>
 
-<p>To view all events, head over to the <em>events view</em>.</p>
+<p>A query can use any field, visible or not, to match a value, such as:</p>
 
-<h2 id="view-an-event">View An Event</h2>
+<ul>
+<li><code>us-west-1</code></li>
+<li><code>dc:us-west-1</code></li>
+<li><code>subscriber:rabbitmq</code></li>
+<li><code>subscription:linux</code></li>
+<li><code>team:webops</code></li>
+</ul>
 
-<p>To see the detail of a specific event, click on it from the <em>events view</em>.</p>
+<h2 id="regular-expressions">Regular Expressions</h2>
 
-<h2 id="resolve-an-event">Resolve An Event</h2>
+<p>Javascript&rsquo;s <em>RegExp</em> object is used to retrieve the matches, thus the following
+special characters are available to use exclusively in the values of a query.</p>
 
-<p>You can resolve an event by selecting one or multiple events on the
-<em>events view</em> and clicking on the <strong>Resolve</strong> action within the <strong>Bulk Actions</strong>
-dropdown menu.</p>
+<p><code>.</code> - Matches any single character.
+For example, <code>dc:a.stria</code> matches the datacenter <strong>austria</strong>.</p>
+
+<p><code>*</code> - Matches the preceding character 0 or more times.
+For example, <code>dc:can*</code> matches the datacenters <strong>canada</strong> and <strong>vatican</strong>, but
+not <strong>cameroon</strong>.</p>
+
+<p><code>+</code> - Matches the preceding character 1 or more times.
+For example, <code>dc:ira+</code> matches the datacenters <strong>iran</strong> and <strong>iraq</strong>, but not
+<strong>ireland</strong>.</p>
+
+<p><code>?</code> - Matches the preceding character 0 or 1 time.
+For example, <code>dc:oc?o</code> matches the datacenter <strong>cameroon</strong>, but not <strong>morocco</strong>.</p>
+
+<p><code>^</code> - Matches beginning of input.
+For example, <code>dc:^por</code> matches the datacenter <strong>portgual</strong>, but not
+<strong>singapore</strong>.</p>
+
+<p><code>$</code> - Matches end of input.
+For example, <code>dc:nea$</code> matches the datacenter <strong>guinea</strong>, but not
+<strong>guinea-bissau</strong>.</p>
+
+<p>See the <a href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">RegExp Object</a>
+documentation for possible quantifiers.</p>
 
 
 			<aside class="copyright" role="note">
@@ -505,7 +534,7 @@ dropdown menu.</p>
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://docs.uchiwa.io/reference/clients/" title="Clients">
+      <a href="https://docs.uchiwa.io/guides/high-availability/" title="High Availability">
         <span class="direction">
           Previous
         </span>
@@ -515,7 +544,7 @@ dropdown menu.</p>
           </div>
           <div class="stretch">
             <div class="title">
-              Clients
+              High Availability
             </div>
           </div>
         </div>
@@ -525,14 +554,14 @@ dropdown menu.</p>
 
   <div class="next">
   
-      <a href="https://docs.uchiwa.io/reference/silencing/" title="Silencing">
+      <a href="https://docs.uchiwa.io/guides/security/" title="Security">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Silencing
+              Security
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
