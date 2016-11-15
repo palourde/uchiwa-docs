@@ -1,11 +1,11 @@
 ---
 title: Security
-weight: 22
+weight: 23
 menu:
   main:
     parent: Guides
     identifier: Security
-    weight: 22
+    weight: 23
 ---
 
 ## Encrypted Passwords
