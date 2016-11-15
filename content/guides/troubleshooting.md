@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-weight: 23
+weight: 24
 menu:
   main:
     parent: Guides
