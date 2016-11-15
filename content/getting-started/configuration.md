@@ -83,7 +83,7 @@ The *uchiwa* hash can contain the following attributes:
     "users": {...},
     "auth": {...},
     "ssl": {...},
-    "useroptions": {...}
+    "usersOptions": {...}
   }
 }
 ```
@@ -99,7 +99,7 @@ pass | false | string | Password of the Uchiwa dashboard. Remove to disable auth
 users | false | hash | [See the Mutliple Users documentation]({{< relref "#multiple-users" >}}). Has precedence over the **user** attribute.
 auth | false | hash | [See the High Availability documentation]({{< relref "guides/high-availability.md#uchiwa-high-availability" >}}).
 ssl | false | hash | [See the HTTPS Encryption documentation]({{< relref "guides/security.md#https-encryption" >}}).
-useroptions | false | hash | [See the User Options documentation]({{< relref "#user-options" >}}).
+usersOptions | false | hash | [See the Users Options documentation]({{< relref "#users-options" >}}).
 
 ### Multiple Users
 
@@ -134,16 +134,20 @@ password | true | string | Password of the user. Also see the [Encrypted Passwor
 accessToken | false | string | A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. [See Generating an access token]({{< relref "#generating-an-access-token" >}}).
 readonly | false | boolean | Restrict write access to the dashboard (create stashes, delete clients, etc.). The default value is `false`.
 
-### User Options
+### Users Options
 
-This hash can set various global user options.
+This hash can set various global users options.
 
 ```json
 {
   "uchiwa": {
-    "useroptions": {
-        "disablenoexpiration": false,
-        "expireonresolvedefault": true
+    "usersOptions": {
+      "dateFormat": "YYYY-MM-DD HH:mm:ss",
+      "defaultExpireOnResolve": false,
+      "defaultTheme": "uchiwa-default",
+      "disableNoExpiration": false,
+      "logoURL": "http://127.0.0.1/logo.png",
+      "requireSilencingReason": false
     }
   }
 }
@@ -151,8 +155,12 @@ This hash can set various global user options.
 
 Key     | Required | Type | Description
 --------|----------|------|------
-disablenoexpiration | false | boolean | Disables the `No expiration` option from the silence creation page. The default value is `false`.
-expireonresolvedefault | false | boolean | Default value of the `Expire on Resolve` checkbox on the silence creation page. The default value is `false`.
+dateFormat | false | string | Determines the format of dates displayed. Default value is `YYYY-MM-DD HH:mm:ss`. See http://momentjs.com/docs/#/displaying/format/ for possible values.
+defaultExpireOnResolve | false | boolean | Default value of the `Expire on Resolve` checkbox on the silence creation page. The default value is `false`.
+defaultTheme | false | string | Determines the default theme to use for new users. Can be overridden at the user level in settings view. Possible values are `uchiwa-default` (light theme) and `uchiwa-dark` (dark theme). The default value is `uchiwa-default`.
+disableNoExpiration | false | boolean | Disables the `No expiration` option from the silence creation page. The default value is `false`.
+logoURL | false | string | URL to a custom logo. Leave empty to use the default logo.
+requireSilencingReason | false | boolean | Determines whether a reason must be provided or not when creating a silence entry. The default value is `false`.
 
 ### Generating an access token
 An access token must only contain friendly URL characters. We recommend using
