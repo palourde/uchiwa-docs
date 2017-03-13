@@ -143,7 +143,6 @@ This hash can set various global users options.
   "uchiwa": {
     "usersOptions": {
       "dateFormat": "YYYY-MM-DD HH:mm:ss",
-      "defaultExpireOnResolve": false,
       "defaultTheme": "uchiwa-default",
       "disableNoExpiration": false,
       "logoURL": "http://127.0.0.1/logo.png",
@@ -156,7 +155,6 @@ This hash can set various global users options.
 Key     | Required | Type | Description
 --------|----------|------|------
 dateFormat | false | string | Determines the format of dates displayed. Default value is `YYYY-MM-DD HH:mm:ss`. See http://momentjs.com/docs/#/displaying/format/ for possible values.
-defaultExpireOnResolve | false | boolean | Default value of the `Expire on Resolve` checkbox on the silence creation page. The default value is `false`.
 defaultTheme | false | string | Determines the default theme to use for new users. Can be overridden at the user level in settings view. Possible values are `uchiwa-default` (light theme) and `uchiwa-dark` (dark theme). The default value is `uchiwa-default`.
 disableNoExpiration | false | boolean | Disables the `No expiration` option from the silence creation page. The default value is `false`.
 logoURL | false | string | URL to a custom logo. Leave empty to use the default logo.
