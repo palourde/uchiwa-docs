@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Getting-started-rsses on Uchiwa Documentation</title>
+    <title>Getting-starteds on Uchiwa Documentation</title>
     <link>https://docs.uchiwa.io/getting-started/index.xml</link>
-    <description>Recent content in Getting-started-rsses on Uchiwa Documentation</description>
+    <description>Recent content in Getting-starteds on Uchiwa Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
@@ -47,9 +47,16 @@ Datacenters can be used, for example, to organize physical datacenters or enviro
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | sudo apt-key add -
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;Determine the codename of the Ubuntu/Debian release on your system:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;. /etc/os-release &amp;amp;&amp;amp; echo $VERSION
+&amp;quot;14.04.4 LTS, Trusty Tahr&amp;quot; # codename for this system is &amp;quot;trusty&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;Create an APT configuration file at &lt;code&gt;/etc/apt/sources.list.d/sensu.list&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;echo &amp;quot;deb     https://sensu.global.ssl.fastly.net/apt sensu main&amp;quot; | sudo tee /etc/apt/sources.list.d/sensu.list
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;export CODENAME=your_release_codename_here # e.g. &amp;quot;trusty&amp;quot;
+echo &amp;quot;deb     https://sensu.global.ssl.fastly.net/apt $CODENAME main&amp;quot; | sudo tee /etc/apt/sources.list.d/sensu.list
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Update APT:&lt;/p&gt;
@@ -68,7 +75,7 @@ Datacenters can be used, for example, to organize physical datacenters or enviro
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;echo &#39;[sensu]
 name=sensu
-baseurl=http://repositories.sensuapp.org/yum/$basearch/
+baseurl=https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/
 gpgcheck=0
 enabled=1&#39; | sudo tee /etc/yum.repos.d/sensu.repo
 &lt;/code&gt;&lt;/pre&gt;
@@ -480,7 +487,6 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
   &amp;quot;uchiwa&amp;quot;: {
     &amp;quot;usersOptions&amp;quot;: {
       &amp;quot;dateFormat&amp;quot;: &amp;quot;YYYY-MM-DD HH:mm:ss&amp;quot;,
-      &amp;quot;defaultExpireOnResolve&amp;quot;: false,
       &amp;quot;defaultTheme&amp;quot;: &amp;quot;uchiwa-default&amp;quot;,
       &amp;quot;disableNoExpiration&amp;quot;: false,
       &amp;quot;logoURL&amp;quot;: &amp;quot;http://127.0.0.1/logo.png&amp;quot;,
@@ -506,13 +512,6 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;string&lt;/td&gt;
 &lt;td&gt;Determines the format of dates displayed. Default value is &lt;code&gt;YYYY-MM-DD HH:mm:ss&lt;/code&gt;. See &lt;a href=&#34;http://momentjs.com/docs/#/displaying/format/&#34;&gt;http://momentjs.com/docs/#/displaying/format/&lt;/a&gt; for possible values.&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;defaultExpireOnResolve&lt;/td&gt;
-&lt;td&gt;false&lt;/td&gt;
-&lt;td&gt;boolean&lt;/td&gt;
-&lt;td&gt;Default value of the &lt;code&gt;Expire on Resolve&lt;/code&gt; checkbox on the silence creation page. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;

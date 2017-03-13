@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Getting-starteds - Uchiwa Documentation</title>
-    <meta name="generator" content="Hugo 0.17" />
+    <meta name="generator" content="Hugo 0.19" />
 
     
     <meta name="description" content="A simple dashboard for the Sensu monitoring framework">
@@ -166,24 +166,6 @@
         <ul>
           
 
-
-
-
-<li>
-  
-    
-
-
-
-<a  title="Home" href="https://docs.uchiwa.io/">
-	
-	Home
-</a>
-
-
-
-  
-</li>
 
 
 
@@ -417,6 +399,24 @@
 </li>
 
 
+
+<li>
+  
+    
+
+
+
+<a  title="Home" href="https://docs.uchiwa.io/">
+	
+	Home
+</a>
+
+
+
+  
+</li>
+
+
         </ul>
         
 
@@ -479,10 +479,9 @@ Sensu See Sensu documentation for more concepts.
 			<br>
 			Manual Installation See the download page to download the packages.
 Debian/Ubuntu Install the GPG public key:
-wget -q <a href="https://sensu.global.ssl.fastly.net/apt/pubkey.gpg">https://sensu.global.ssl.fastly.net/apt/pubkey.gpg</a> -O- | sudo apt-key add -  Create an APT configuration file at /etc/apt/sources.list.d/sensu.list:
-echo &quot;deb <a href="https://sensu.global.ssl.fastly.net/apt">https://sensu.global.ssl.fastly.net/apt</a> sensu main&quot; | sudo tee /etc/apt/sources.list.d/sensu.list  Update APT:
-sudo apt-get update  Install Uchiwa:
-sudo apt-get install uchiwa  RHEL/CentOS Create the YUM repository configuration file for the Sensu Core repository at /etc/yum.
+wget -q <a href="https://sensu.global.ssl.fastly.net/apt/pubkey.gpg">https://sensu.global.ssl.fastly.net/apt/pubkey.gpg</a> -O- | sudo apt-key add -  Determine the codename of the Ubuntu/Debian release on your system:
+. /etc/os-release &amp;&amp; echo $VERSION &quot;14.04.4 LTS, Trusty Tahr&quot; # codename for this system is &quot;trusty&quot;  Create an APT configuration file at /etc/apt/sources.list.d/sensu.list:
+export CODENAME=your_release_codename_here # e.g. &quot;trusty&quot; echo &quot;deb <a href="https://sensu.global.ssl.fastly.net/apt">https://sensu.global.ssl.fastly.net/apt</a> $CODENAME main&quot; | sudo tee /etc/apt/sources.
 
 			<hr>
 			
@@ -499,7 +498,7 @@ sudo apt-get install uchiwa  RHEL/CentOS Create the YUM repository configuration
 
 			<aside class="copyright" role="note">
 				
-				&copy; 2016 Released under the MIT license &ndash;
+				&copy; 2017 Released under the MIT license &ndash;
 				
 				Documentation built with
 				<a href="https://www.gohugo.io" target="_blank">Hugo</a>

@@ -10,38 +10,6 @@
     <atom:link href="https://docs.uchiwa.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Uchiwa</title>
-      <link>https://docs.uchiwa.io/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.uchiwa.io/</guid>
-      <description>
-
-&lt;h2 id=&#34;what-is-uchiwa&#34;&gt;What is Uchiwa?&lt;/h2&gt;
-
-&lt;p&gt;Uchiwa is a simple yet effective open-source dashboard for the
-&lt;a href=&#34;https://sensuapp.org/&#34;&gt;Sensu&lt;/a&gt; monitoring framework.&lt;/p&gt;
-
-&lt;p&gt;With Uchiwa, you are able to enhance your monitoring platform:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Improve operational visibility with a &lt;em&gt;single pane of glass&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Build tooling against a federated API&lt;/li&gt;
-&lt;li&gt;Share components and services status with your stakeholders&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Uchiwa is:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Open-source&lt;/strong&gt;: Download it and customize it&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Light&lt;/strong&gt;: No dependencies and a small footprint&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Powerful&lt;/strong&gt;: Manage ten of thousands of servers, applications and others&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Easy to use&lt;/strong&gt;: Abstract complex monitoring concepts to your users&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Basic Concepts</title>
       <link>https://docs.uchiwa.io/getting-started/basic-concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -79,9 +47,16 @@ Datacenters can be used, for example, to organize physical datacenters or enviro
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | sudo apt-key add -
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;Determine the codename of the Ubuntu/Debian release on your system:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;. /etc/os-release &amp;amp;&amp;amp; echo $VERSION
+&amp;quot;14.04.4 LTS, Trusty Tahr&amp;quot; # codename for this system is &amp;quot;trusty&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;Create an APT configuration file at &lt;code&gt;/etc/apt/sources.list.d/sensu.list&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;echo &amp;quot;deb     https://sensu.global.ssl.fastly.net/apt sensu main&amp;quot; | sudo tee /etc/apt/sources.list.d/sensu.list
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;export CODENAME=your_release_codename_here # e.g. &amp;quot;trusty&amp;quot;
+echo &amp;quot;deb     https://sensu.global.ssl.fastly.net/apt $CODENAME main&amp;quot; | sudo tee /etc/apt/sources.list.d/sensu.list
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Update APT:&lt;/p&gt;
@@ -100,7 +75,7 @@ Datacenters can be used, for example, to organize physical datacenters or enviro
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;echo &#39;[sensu]
 name=sensu
-baseurl=http://repositories.sensuapp.org/yum/$basearch/
+baseurl=https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/
 gpgcheck=0
 enabled=1&#39; | sudo tee /etc/yum.repos.d/sensu.repo
 &lt;/code&gt;&lt;/pre&gt;
@@ -512,7 +487,6 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
   &amp;quot;uchiwa&amp;quot;: {
     &amp;quot;usersOptions&amp;quot;: {
       &amp;quot;dateFormat&amp;quot;: &amp;quot;YYYY-MM-DD HH:mm:ss&amp;quot;,
-      &amp;quot;defaultExpireOnResolve&amp;quot;: false,
       &amp;quot;defaultTheme&amp;quot;: &amp;quot;uchiwa-default&amp;quot;,
       &amp;quot;disableNoExpiration&amp;quot;: false,
       &amp;quot;logoURL&amp;quot;: &amp;quot;http://127.0.0.1/logo.png&amp;quot;,
@@ -538,13 +512,6 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;string&lt;/td&gt;
 &lt;td&gt;Determines the format of dates displayed. Default value is &lt;code&gt;YYYY-MM-DD HH:mm:ss&lt;/code&gt;. See &lt;a href=&#34;http://momentjs.com/docs/#/displaying/format/&#34;&gt;http://momentjs.com/docs/#/displaying/format/&lt;/a&gt; for possible values.&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;defaultExpireOnResolve&lt;/td&gt;
-&lt;td&gt;false&lt;/td&gt;
-&lt;td&gt;boolean&lt;/td&gt;
-&lt;td&gt;Default value of the &lt;code&gt;Expire on Resolve&lt;/code&gt; checkbox on the silence creation page. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1214,6 +1181,38 @@ to apply changes.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grunt
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Uchiwa</title>
+      <link>https://docs.uchiwa.io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/</guid>
+      <description>
+
+&lt;h2 id=&#34;what-is-uchiwa&#34;&gt;What is Uchiwa?&lt;/h2&gt;
+
+&lt;p&gt;Uchiwa is a simple yet effective open-source dashboard for the
+&lt;a href=&#34;https://sensuapp.org/&#34;&gt;Sensu&lt;/a&gt; monitoring framework.&lt;/p&gt;
+
+&lt;p&gt;With Uchiwa, you are able to enhance your monitoring platform:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Improve operational visibility with a &lt;em&gt;single pane of glass&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Build tooling against a federated API&lt;/li&gt;
+&lt;li&gt;Share components and services status with your stakeholders&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Uchiwa is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Open-source&lt;/strong&gt;: Download it and customize it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Light&lt;/strong&gt;: No dependencies and a small footprint&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Powerful&lt;/strong&gt;: Manage ten of thousands of servers, applications and others&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Easy to use&lt;/strong&gt;: Abstract complex monitoring concepts to your users&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

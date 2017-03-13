@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Installation - Uchiwa Documentation</title>
-    <meta name="generator" content="Hugo 0.17" />
+    <meta name="generator" content="Hugo 0.19" />
 
     
     <meta name="description" content="A simple dashboard for the Sensu monitoring framework">
@@ -171,24 +171,6 @@
         <ul>
           
 
-
-
-
-<li>
-  
-    
-
-
-
-<a  title="Home" href="https://docs.uchiwa.io/">
-	
-	Home
-</a>
-
-
-
-  
-</li>
 
 
 
@@ -425,6 +407,24 @@
 </li>
 
 
+
+<li>
+  
+    
+
+
+
+<a  title="Home" href="https://docs.uchiwa.io/">
+	
+	Home
+</a>
+
+
+
+  
+</li>
+
+
         </ul>
         
 
@@ -482,9 +482,16 @@
 <pre><code class="language-sh">wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | sudo apt-key add -
 </code></pre>
 
+<p>Determine the codename of the Ubuntu/Debian release on your system:</p>
+
+<pre><code class="language-sh">. /etc/os-release &amp;&amp; echo $VERSION
+&quot;14.04.4 LTS, Trusty Tahr&quot; # codename for this system is &quot;trusty&quot;
+</code></pre>
+
 <p>Create an APT configuration file at <code>/etc/apt/sources.list.d/sensu.list</code>:</p>
 
-<pre><code class="language-sh">echo &quot;deb     https://sensu.global.ssl.fastly.net/apt sensu main&quot; | sudo tee /etc/apt/sources.list.d/sensu.list
+<pre><code class="language-sh">export CODENAME=your_release_codename_here # e.g. &quot;trusty&quot;
+echo &quot;deb     https://sensu.global.ssl.fastly.net/apt $CODENAME main&quot; | sudo tee /etc/apt/sources.list.d/sensu.list
 </code></pre>
 
 <p>Update APT:</p>
@@ -503,7 +510,7 @@
 
 <pre><code class="language-sh">echo '[sensu]
 name=sensu
-baseurl=http://repositories.sensuapp.org/yum/$basearch/
+baseurl=https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/
 gpgcheck=0
 enabled=1' | sudo tee /etc/yum.repos.d/sensu.repo
 </code></pre>
@@ -605,7 +612,7 @@ npm install --production --unsafe-perm # Root user
 
 			<aside class="copyright" role="note">
 				
-				&copy; 2016 Released under the MIT license &ndash;
+				&copy; 2017 Released under the MIT license &ndash;
 				
 				Documentation built with
 				<a href="https://www.gohugo.io" target="_blank">Hugo</a>

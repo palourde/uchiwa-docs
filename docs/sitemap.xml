@@ -2,14 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://docs.uchiwa.io/</loc>
-  </url>
-  
-  <url>
-    <loc>https://docs.uchiwa.io/</loc>
-  </url>
-  
-  <url>
     <loc>https://docs.uchiwa.io/getting-started/basic-concepts/</loc>
   </url>
   
@@ -63,6 +55,40 @@
   
   <url>
     <loc>https://docs.uchiwa.io/contributing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/api/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/contributing/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/getting-started/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/guides/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/reference/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs.uchiwa.io/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>
