@@ -18,9 +18,16 @@ Install the GPG public key:
 wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | sudo apt-key add -
 ```
 
+Determine the codename of the Ubuntu/Debian release on your system:
+```sh
+. /etc/os-release && echo $VERSION
+"14.04.4 LTS, Trusty Tahr" # codename for this system is "trusty"
+```
+
 Create an APT configuration file at `/etc/apt/sources.list.d/sensu.list`:
 ```sh
-echo "deb     https://sensu.global.ssl.fastly.net/apt sensu main" | sudo tee /etc/apt/sources.list.d/sensu.list
+export CODENAME=your_release_codename_here # e.g. "trusty"
+echo "deb     https://sensu.global.ssl.fastly.net/apt $CODENAME main" | sudo tee /etc/apt/sources.list.d/sensu.list
 ```
 
 Update APT:
@@ -39,7 +46,7 @@ Create the YUM repository configuration file for the Sensu Core repository at `/
 ```sh
 echo '[sensu]
 name=sensu
-baseurl=http://repositories.sensuapp.org/yum/$basearch/
+baseurl=https://sensu.global.ssl.fastly.net/yum/$releasever/$basearch/
 gpgcheck=0
 enabled=1' | sudo tee /etc/yum.repos.d/sensu.repo
 ```
