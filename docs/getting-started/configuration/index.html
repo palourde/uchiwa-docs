@@ -777,7 +777,8 @@ users attribute. The <strong>users</strong> attribute has precedence over the <s
       &quot;defaultTheme&quot;: &quot;uchiwa-default&quot;,
       &quot;disableNoExpiration&quot;: false,
       &quot;logoURL&quot;: &quot;http://127.0.0.1/logo.png&quot;,
-      &quot;requireSilencingReason&quot;: false
+      &quot;requireSilencingReason&quot;: false,
+      &quot;silenceDurations&quot;: [ 0.5, 2 ]
     }
   }
 }
@@ -812,7 +813,7 @@ users attribute. The <strong>users</strong> attribute has precedence over the <s
 <td>disableNoExpiration</td>
 <td>false</td>
 <td>boolean</td>
-<td>Disables the <code>No expiration</code> option from the silence creation page. The default value is <code>false</code>.</td>
+<td>Disables the <code>only if manually removed</code> option from the silencing entry creation. The default value is <code>false</code>.</td>
 </tr>
 
 <tr>
@@ -827,6 +828,13 @@ users attribute. The <strong>users</strong> attribute has precedence over the <s
 <td>false</td>
 <td>boolean</td>
 <td>Determines whether a reason must be provided or not when creating a silence entry. The default value is <code>false</code>.</td>
+</tr>
+
+<tr>
+<td>silenceDurations</td>
+<td>false</td>
+<td>array of decimals</td>
+<td>Additional preset durations (<strong>in hours</strong>) when silencing an item. Decimal values are allowed. The default value is <code>[ 0.25, 1, 24 ]</code>, which corresponds to <code>15 minutes</code>, <code>an hour</code> and <code>a day</code>.</td>
 </tr>
 </tbody>
 </table>

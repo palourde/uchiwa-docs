@@ -490,7 +490,8 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
       &amp;quot;defaultTheme&amp;quot;: &amp;quot;uchiwa-default&amp;quot;,
       &amp;quot;disableNoExpiration&amp;quot;: false,
       &amp;quot;logoURL&amp;quot;: &amp;quot;http://127.0.0.1/logo.png&amp;quot;,
-      &amp;quot;requireSilencingReason&amp;quot;: false
+      &amp;quot;requireSilencingReason&amp;quot;: false,
+      &amp;quot;silenceDurations&amp;quot;: [ 0.5, 2 ]
     }
   }
 }
@@ -525,7 +526,7 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;td&gt;disableNoExpiration&lt;/td&gt;
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;boolean&lt;/td&gt;
-&lt;td&gt;Disables the &lt;code&gt;No expiration&lt;/code&gt; option from the silence creation page. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;Disables the &lt;code&gt;only if manually removed&lt;/code&gt; option from the silencing entry creation. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -540,6 +541,13 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;boolean&lt;/td&gt;
 &lt;td&gt;Determines whether a reason must be provided or not when creating a silence entry. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;silenceDurations&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;array of decimals&lt;/td&gt;
+&lt;td&gt;Additional preset durations (&lt;strong&gt;in hours&lt;/strong&gt;) when silencing an item. Decimal values are allowed. The default value is &lt;code&gt;[ 0.25, 1, 24 ]&lt;/code&gt;, which corresponds to &lt;code&gt;15 minutes&lt;/code&gt;, &lt;code&gt;an hour&lt;/code&gt; and &lt;code&gt;a day&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
