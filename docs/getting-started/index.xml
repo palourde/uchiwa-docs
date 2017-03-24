@@ -489,6 +489,7 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
       &amp;quot;dateFormat&amp;quot;: &amp;quot;YYYY-MM-DD HH:mm:ss&amp;quot;,
       &amp;quot;defaultTheme&amp;quot;: &amp;quot;uchiwa-default&amp;quot;,
       &amp;quot;disableNoExpiration&amp;quot;: false,
+      &amp;quot;favicon&amp;quot;: &amp;quot;http://127.0.0.1/favicon.png&amp;quot;,
       &amp;quot;logoURL&amp;quot;: &amp;quot;http://127.0.0.1/logo.png&amp;quot;,
       &amp;quot;requireSilencingReason&amp;quot;: false,
       &amp;quot;silenceDurations&amp;quot;: [ 0.5, 2 ]
@@ -527,6 +528,13 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;boolean&lt;/td&gt;
 &lt;td&gt;Disables the &lt;code&gt;only if manually removed&lt;/code&gt; option from the silencing entry creation. The default value is &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;favicon&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;URL or full path to a custom favicon. Leave empty to use the default favicon.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;

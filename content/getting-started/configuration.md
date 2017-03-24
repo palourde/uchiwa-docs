@@ -145,6 +145,7 @@ This hash can set various global users options.
       "dateFormat": "YYYY-MM-DD HH:mm:ss",
       "defaultTheme": "uchiwa-default",
       "disableNoExpiration": false,
+      "favicon": "http://127.0.0.1/favicon.png",
       "logoURL": "http://127.0.0.1/logo.png",
       "requireSilencingReason": false,
       "silenceDurations": [ 0.5, 2 ]
@@ -158,6 +159,7 @@ Key     | Required | Type | Description
 dateFormat | false | string | Determines the format of dates displayed. Default value is `YYYY-MM-DD HH:mm:ss`. See http://momentjs.com/docs/#/displaying/format/ for possible values.
 defaultTheme | false | string | Determines the default theme to use for new users. Can be overridden at the user level in settings view. Possible values are `uchiwa-default` (light theme) and `uchiwa-dark` (dark theme). The default value is `uchiwa-default`.
 disableNoExpiration | false | boolean | Disables the `only if manually removed` option from the silencing entry creation. The default value is `false`.
+favicon | false | string | URL or full path to a custom favicon. Leave empty to use the default favicon.
 logoURL | false | string | URL to a custom logo. Leave empty to use the default logo.
 requireSilencingReason | false | boolean | Determines whether a reason must be provided or not when creating a silence entry. The default value is `false`.
 silenceDurations | false | array of decimals | Additional preset durations (**in hours**) when silencing an item. Decimal values are allowed. The default value is `[ 0.25, 1, 24 ]`, which corresponds to `15 minutes`, `an hour` and `a day`.
