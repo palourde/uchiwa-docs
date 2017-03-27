@@ -490,7 +490,7 @@ all fields are tested against it.</p>
 <h2 id="regular-expressions">Regular Expressions</h2>
 
 <p>Javascript&rsquo;s <em>RegExp</em> object is used to retrieve the matches, thus the following
-special characters are available to use exclusively in the values of a query.</p>
+special characters are available to use exclusively with <code>field:value</code> queries.</p>
 
 <p><code>.</code> - Matches any single character.
 For example, <code>dc:a.stria</code> matches the datacenter <strong>austria</strong>.</p>
@@ -513,6 +513,20 @@ For example, <code>dc:^por</code> matches the datacenter <strong>portgual</stron
 <p><code>$</code> - Matches end of input.
 For example, <code>dc:nea$</code> matches the datacenter <strong>guinea</strong>, but not
 <strong>guinea-bissau</strong>.</p>
+
+<h3 id="negative-lookahead">Negative Lookahead</h3>
+
+<p><code>^((?!string).)*$</code> - Does not match the provided <em>string</em>.</p>
+
+<p>For example, <code>check:^((?!check_critical).)*$</code> does not match the check
+<strong>check_critical</strong> but does match <strong>check_warning</strong>.</p>
+
+<p>Also, <code>client:^((?!foo).)*$</code> does not match the client
+<strong>foo</strong> but does match <strong>bar</strong>.</p>
+
+<p>When using negative lookahead, the field name must be unique within the
+object. The <strong>check</strong> and <strong>client</strong> field names can be used for this reason
+instead of <strong>name</strong>.</p>
 
 <p>See the <a href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">RegExp Object</a>
 documentation for possible quantifiers.</p>

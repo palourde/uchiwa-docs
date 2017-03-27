@@ -111,7 +111,7 @@ all fields are tested against it.&lt;/p&gt;
 &lt;h2 id=&#34;regular-expressions&#34;&gt;Regular Expressions&lt;/h2&gt;
 
 &lt;p&gt;Javascript&amp;rsquo;s &lt;em&gt;RegExp&lt;/em&gt; object is used to retrieve the matches, thus the following
-special characters are available to use exclusively in the values of a query.&lt;/p&gt;
+special characters are available to use exclusively with &lt;code&gt;field:value&lt;/code&gt; queries.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;.&lt;/code&gt; - Matches any single character.
 For example, &lt;code&gt;dc:a.stria&lt;/code&gt; matches the datacenter &lt;strong&gt;austria&lt;/strong&gt;.&lt;/p&gt;
@@ -134,6 +134,20 @@ For example, &lt;code&gt;dc:^por&lt;/code&gt; matches the datacenter &lt;strong&
 &lt;p&gt;&lt;code&gt;$&lt;/code&gt; - Matches end of input.
 For example, &lt;code&gt;dc:nea$&lt;/code&gt; matches the datacenter &lt;strong&gt;guinea&lt;/strong&gt;, but not
 &lt;strong&gt;guinea-bissau&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;negative-lookahead&#34;&gt;Negative Lookahead&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;^((?!string).)*$&lt;/code&gt; - Does not match the provided &lt;em&gt;string&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, &lt;code&gt;check:^((?!check_critical).)*$&lt;/code&gt; does not match the check
+&lt;strong&gt;check_critical&lt;/strong&gt; but does match &lt;strong&gt;check_warning&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, &lt;code&gt;client:^((?!foo).)*$&lt;/code&gt; does not match the client
+&lt;strong&gt;foo&lt;/strong&gt; but does match &lt;strong&gt;bar&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;When using negative lookahead, the field name must be unique within the
+object. The &lt;strong&gt;check&lt;/strong&gt; and &lt;strong&gt;client&lt;/strong&gt; field names can be used for this reason
+instead of &lt;strong&gt;name&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;See the &lt;a href=&#34;http://www.w3schools.com/jsref/jsref_obj_regexp.asp&#34;&gt;RegExp Object&lt;/a&gt;
 documentation for possible quantifiers.&lt;/p&gt;

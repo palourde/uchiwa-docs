@@ -23,7 +23,7 @@ A query can use any field, visible or not, to match a value, such as:
 
 ## Regular Expressions
 Javascript's *RegExp* object is used to retrieve the matches, thus the following
-special characters are available to use exclusively in the values of a query.
+special characters are available to use exclusively with `field:value` queries.
 
 `.` - Matches any single character.
 For example, `dc:a.stria` matches the datacenter **austria**.
@@ -46,6 +46,19 @@ For example, `dc:^por` matches the datacenter **portgual**, but not
 `$` - Matches end of input.
 For example, `dc:nea$` matches the datacenter **guinea**, but not
 **guinea-bissau**.
+
+### Negative Lookahead
+`^((?!string).)*$` - Does not match the provided *string*.
+
+For example, `check:^((?!check_critical).)*$` does not match the check
+**check_critical** but does match **check_warning**.
+
+Also, `client:^((?!foo).)*$` does not match the client
+**foo** but does match **bar**.
+
+When using negative lookahead, the field name must be unique within the
+object. The **check** and **client** field names can be used for this reason
+instead of **name**.
 
 See the [RegExp Object](http://www.w3schools.com/jsref/jsref_obj_regexp.asp)
 documentation for possible quantifiers.
