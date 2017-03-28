@@ -467,7 +467,7 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;td&gt;accessToken&lt;/td&gt;
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;string&lt;/td&gt;
-&lt;td&gt;A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. &lt;a href=&#34;#generating-an-access-token&#34;&gt;See Generating an access token&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. See &lt;a href=&#34;#generating-an-access-token&#34;&gt;Generating an access token&lt;/a&gt; and &lt;a href=&#34;https://docs.uchiwa.io/api/authentication/&#34;&gt;API Authentication&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1020,6 +1020,41 @@ and click on the silence icon corresponding to the check on the right panel.&lt;
     </item>
     
     <item>
+      <title>Authentication</title>
+      <link>https://docs.uchiwa.io/api/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/api/authentication/</guid>
+      <description>
+
+&lt;p&gt;In order to use the Uchiwa API when authentication is enabled, you must provide
+an access token with every request.&lt;/p&gt;
+
+&lt;p&gt;Remember to keep your access tokens secret and use HTTPS wherever possible.&lt;/p&gt;
+
+&lt;h2 id=&#34;configuring-an-access-token&#34;&gt;Configuring an access token&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Set the &lt;em&gt;accessToken&lt;/em&gt; attribute in the appropriate role; see the
+&lt;a href=&#34;https://docs.uchiwa.io/getting-started/configuration/#multiple-users&#34;&gt;documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Restart Uchiwa to apply this change.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;providing-the-access-token&#34;&gt;Providing the access token&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;In a header&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -H &amp;quot;Authorization: token TOKEN&amp;quot; https://localhost:3000/events
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;As a parameter&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl https://localhost:3000/events?token=TOKEN
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Health API</title>
       <link>https://docs.uchiwa.io/api/health/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1211,38 +1246,6 @@ to apply changes.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;grunt
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Uchiwa</title>
-      <link>https://docs.uchiwa.io/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.uchiwa.io/</guid>
-      <description>
-
-&lt;h2 id=&#34;what-is-uchiwa&#34;&gt;What is Uchiwa?&lt;/h2&gt;
-
-&lt;p&gt;Uchiwa is a simple yet effective open-source dashboard for the
-&lt;a href=&#34;https://sensuapp.org/&#34;&gt;Sensu&lt;/a&gt; monitoring framework.&lt;/p&gt;
-
-&lt;p&gt;With Uchiwa, you are able to enhance your monitoring platform:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Improve operational visibility with a &lt;em&gt;single pane of glass&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Build tooling against a federated API&lt;/li&gt;
-&lt;li&gt;Share components and services status with your stakeholders&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Uchiwa is:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Open-source&lt;/strong&gt;: Download it and customize it&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Light&lt;/strong&gt;: No dependencies and a small footprint&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Powerful&lt;/strong&gt;: Manage ten of thousands of servers, applications and others&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Easy to use&lt;/strong&gt;: Abstract complex monitoring concepts to your users&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

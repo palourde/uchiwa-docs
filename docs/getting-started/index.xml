@@ -467,7 +467,7 @@ users attribute. The &lt;strong&gt;users&lt;/strong&gt; attribute has precedence
 &lt;td&gt;accessToken&lt;/td&gt;
 &lt;td&gt;false&lt;/td&gt;
 &lt;td&gt;string&lt;/td&gt;
-&lt;td&gt;A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. &lt;a href=&#34;#generating-an-access-token&#34;&gt;See Generating an access token&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. See &lt;a href=&#34;#generating-an-access-token&#34;&gt;Generating an access token&lt;/a&gt; and &lt;a href=&#34;https://docs.uchiwa.io/api/authentication/&#34;&gt;API Authentication&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;

@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Contributing - Uchiwa Documentation</title>
+    <title>Authentication - Uchiwa Documentation</title>
     <meta name="generator" content="Hugo 0.19" />
 
     
     <meta name="description" content="A simple dashboard for the Sensu monitoring framework">
     
-    <link rel="canonical" href="https://docs.uchiwa.io/contributing/">
+    <link rel="canonical" href="https://docs.uchiwa.io/api/authentication/">
     
     <meta name="author" content="Simon Plourde">
     
 
-    <meta property="og:url" content="https://docs.uchiwa.io/contributing/">
+    <meta property="og:url" content="https://docs.uchiwa.io/api/authentication/">
     <meta property="og:title" content="Uchiwa Documentation">
     
     <meta name="apple-mobile-web-app-title" content="Uchiwa Documentation">
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Contributing
+        Authentication
       </div>
     </div>
 
@@ -373,11 +373,14 @@
 
 
 
-<a  title="Authentication" href="https://docs.uchiwa.io/api/authentication/">
+<a class="current" title="Authentication" href="https://docs.uchiwa.io/api/authentication/">
 	
 	Authentication
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
       
@@ -406,14 +409,11 @@
 
 
 
-<a class="current" title="Contributing" href="https://docs.uchiwa.io/contributing/">
+<a  title="Contributing" href="https://docs.uchiwa.io/contributing/">
 	
 	Contributing
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -480,86 +480,33 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Contributing </h1>
+			<h1>Authentication </h1>
 
 			
 
-<h2 id="installation">Installation</h2>
+<p>In order to use the Uchiwa API when authentication is enabled, you must provide
+an access token with every request.</p>
 
-<h3 id="backend">Backend</h3>
+<p>Remember to keep your access tokens secret and use HTTPS wherever possible.</p>
 
-<p><a href="https://docs.uchiwa.io/getting-started/installation/#from-source">Follow these instructions</a>
-for the Go backend.</p>
+<h2 id="configuring-an-access-token">Configuring an access token</h2>
 
-<h3 id="frontend">Frontend</h3>
+<ol>
+<li>Set the <em>accessToken</em> attribute in the appropriate role; see the
+<a href="https://docs.uchiwa.io/getting-started/configuration/#multiple-users">documentation</a>.</li>
+<li>Restart Uchiwa to apply this change.</li>
+</ol>
 
-<p><em>Optional</em>. If you wish to modify the frontend components, you&rsquo;ll need to follow
-these additional instructions:</p>
+<h2 id="providing-the-access-token">Providing the access token</h2>
 
-<p>Clone the <a href="https://github.com/sensu/uchiwa-web">uchiwa-web</a> repository:</p>
+<p><strong>In a header</strong></p>
 
-<pre><code class="language-sh">git clone git@github.com:sensu/uchiwa-web.git &amp;&amp; cd uchiwa-web
+<pre><code>curl -H &quot;Authorization: token TOKEN&quot; https://localhost:3000/events
 </code></pre>
 
-<p>Install third-party libraries:</p>
+<p><strong>As a parameter</strong></p>
 
-<pre><code class="language-sh">npm install # Standard user
-npm install --unsafe-perm # Root user
-</code></pre>
-
-<p>Create a global link for uchiwa-web:</p>
-
-<pre><code class="language-sh">bower link
-</code></pre>
-
-<p>Move to your uchiwa repository directory:</p>
-
-<pre><code class="language-sh">cd $GOPATH/src/github.com/sensu/uchiwa
-</code></pre>
-
-<p>Uninstall the uchiwa-web bower component if previously installed:</p>
-
-<pre><code class="language-sh">bower uninstall uchiwa-web
-</code></pre>
-
-<p>Point the bower component uchiwa-web to the previously created link</p>
-
-<pre><code class="language-sh">bower link uchiwa-web
-</code></pre>
-
-<h2 id="development">Development</h2>
-
-<h3 id="backend-1">Backend</h3>
-
-<p>Run the program:</p>
-
-<pre><code class="language-sh">go run uchiwa.go
-</code></pre>
-
-<p><strong>N.B.</strong>: You&rsquo;ll need to relaunch this command if you modify the source code
-to apply changes.</p>
-
-<h3 id="frontend-1">Frontend</h3>
-
-<p>Generate <strong>CSS</strong> files from <strong>Sass</strong> templates:</p>
-
-<pre><code class="language-sh">grunt sass
-</code></pre>
-
-<h2 id="testing">Testing</h2>
-
-<h3 id="backend-2">Backend</h3>
-
-<p>Run the unit tests:</p>
-
-<pre><code class="language-sh">go test -v ./...
-</code></pre>
-
-<h3 id="frontend-2">Frontend</h3>
-
-<p>Run linting and unit tests:</p>
-
-<pre><code class="language-sh">grunt
+<pre><code>curl https://localhost:3000/events?token=TOKEN
 </code></pre>
 
 
@@ -579,7 +526,7 @@ to apply changes.</p>
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://docs.uchiwa.io/api/health/" title="Health API">
+      <a href="https://docs.uchiwa.io/reference/silencing/" title="Silencing">
         <span class="direction">
           Previous
         </span>
@@ -589,7 +536,7 @@ to apply changes.</p>
           </div>
           <div class="stretch">
             <div class="title">
-              Health API
+              Silencing
             </div>
           </div>
         </div>
@@ -599,14 +546,14 @@ to apply changes.</p>
 
   <div class="next">
   
-      <a href="https://docs.uchiwa.io/api/" title="Apis">
+      <a href="https://docs.uchiwa.io/api/health/" title="Health API">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Apis
+              Health API
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

@@ -131,7 +131,7 @@ Key     | Required | Type | Description
 --------|----------|------|------
 username | true | string | Username of the user.
 password | true | string | Password of the user. Also see the [Encrypted Passwords documentation]({{< relref "guides/security.md#encrypted-passwords" >}}).
-accessToken | false | string | A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. [See Generating an access token]({{< relref "#generating-an-access-token" >}}).
+accessToken | false | string | A unique and secure token to interact with the Uchiwa API as the related user. Remember to keep your access tokens secret. Must only contain friendly URL characters. See [Generating an access token]({{< relref "#generating-an-access-token" >}}) and [API Authentication]({{< relref "api/authentication.md" >}}).
 readonly | false | boolean | Restrict write access to the dashboard (create stashes, delete clients, etc.). The default value is `false`.
 
 ### Users Options

@@ -50,6 +50,10 @@
   </url>
   
   <url>
+    <loc>https://docs.uchiwa.io/api/authentication/</loc>
+  </url>
+  
+  <url>
     <loc>https://docs.uchiwa.io/api/health/</loc>
   </url>
   

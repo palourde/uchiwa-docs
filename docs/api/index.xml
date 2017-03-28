@@ -10,6 +10,41 @@
     <atom:link href="https://docs.uchiwa.io/api/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Authentication</title>
+      <link>https://docs.uchiwa.io/api/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.uchiwa.io/api/authentication/</guid>
+      <description>
+
+&lt;p&gt;In order to use the Uchiwa API when authentication is enabled, you must provide
+an access token with every request.&lt;/p&gt;
+
+&lt;p&gt;Remember to keep your access tokens secret and use HTTPS wherever possible.&lt;/p&gt;
+
+&lt;h2 id=&#34;configuring-an-access-token&#34;&gt;Configuring an access token&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Set the &lt;em&gt;accessToken&lt;/em&gt; attribute in the appropriate role; see the
+&lt;a href=&#34;https://docs.uchiwa.io/getting-started/configuration/#multiple-users&#34;&gt;documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Restart Uchiwa to apply this change.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;providing-the-access-token&#34;&gt;Providing the access token&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;In a header&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -H &amp;quot;Authorization: token TOKEN&amp;quot; https://localhost:3000/events
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;As a parameter&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl https://localhost:3000/events?token=TOKEN
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Health API</title>
       <link>https://docs.uchiwa.io/api/health/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
