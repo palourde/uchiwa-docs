@@ -768,6 +768,8 @@ password. For example:&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+&lt;p&gt;Alternatively, you could use the &lt;a href=&#34;https://passlib.readthedocs.io/en/stable/&#34;&gt;Passlib hashing library for Python 2 &amp;amp; 3&lt;/a&gt;.&lt;/p&gt;
+
 &lt;h2 id=&#34;https-encryption&#34;&gt;HTTPS Encryption&lt;/h2&gt;
 
 &lt;p&gt;You can serve all content over HTTPS, using Uchiwa, without the need of

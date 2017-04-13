@@ -29,6 +29,9 @@ SHA-256 | `mkpasswd --method=SHA-256 MY_PASSWORD`
 SHA-512 | `mkpasswd --method=SHA-512 MY_PASSWORD`
 
 
+Alternatively, you could use the [Passlib hashing library for Python 2 & 3]
+(https://passlib.readthedocs.io/en/stable/).
+
 ## HTTPS Encryption
 You can serve all content over HTTPS, using Uchiwa, without the need of
 a reverse proxy. To get started, follow these few steps:

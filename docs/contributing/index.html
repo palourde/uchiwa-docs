@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Contributing - Uchiwa Documentation</title>
+    <title>Contributings - Uchiwa Documentation</title>
     <meta name="generator" content="Hugo 0.19" />
 
     
@@ -69,14 +69,12 @@
     <script src="https://docs.uchiwa.io/javascripts/modernizr.js"></script>
 
     
+    <link href="https://docs.uchiwa.io/contributing/index.xml" rel="alternate" type="application/rss+xml" title="Uchiwa Documentation" />
+    <link href="https://docs.uchiwa.io/contributing/index.xml" rel="feed" type="application/rss+xml" title="Uchiwa Documentation" />
+    
 
   </head>
   <body class="palette-primary-light-blue palette-accent-light-blue">
-
-
-
-	
-	
 
 
 <div class="backdrop">
@@ -97,7 +95,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Contributing
+        Contributings
       </div>
     </div>
 
@@ -139,9 +137,6 @@
       
       <div class="name">
         <strong>Uchiwa Documentation <span class="version">0.20.0</span></strong>
-        
-          <br>
-          sensu/uchiwa
         
       </div>
     </div>
@@ -480,88 +475,24 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Contributing </h1>
+			<h1>Pages in Contributing</h1>
 
 			
+			<a href="https://docs.uchiwa.io/contributing/" title="Contributing">
+				<h2>Contributing</h2>
+			</a>
 
-<h2 id="installation">Installation</h2>
+			<br>
+			Installation Backend Follow these instructions for the Go backend.
+Frontend Optional. If you wish to modify the frontend components, you&rsquo;ll need to follow these additional instructions:
+Clone the uchiwa-web repository:
+git clone git@github.com:sensu/uchiwa-web.git &amp;&amp; cd uchiwa-web  Install third-party libraries:
+npm install # Standard user npm install &ndash;unsafe-perm # Root user  Create a global link for uchiwa-web:
+bower link  Move to your uchiwa repository directory:
+cd $GOPATH/src/github.com/sensu/uchiwa  Uninstall the uchiwa-web bower component if previously installed:
 
-<h3 id="backend">Backend</h3>
-
-<p><a href="https://docs.uchiwa.io/getting-started/installation/#from-source">Follow these instructions</a>
-for the Go backend.</p>
-
-<h3 id="frontend">Frontend</h3>
-
-<p><em>Optional</em>. If you wish to modify the frontend components, you&rsquo;ll need to follow
-these additional instructions:</p>
-
-<p>Clone the <a href="https://github.com/sensu/uchiwa-web">uchiwa-web</a> repository:</p>
-
-<pre><code class="language-sh">git clone git@github.com:sensu/uchiwa-web.git &amp;&amp; cd uchiwa-web
-</code></pre>
-
-<p>Install third-party libraries:</p>
-
-<pre><code class="language-sh">npm install # Standard user
-npm install --unsafe-perm # Root user
-</code></pre>
-
-<p>Create a global link for uchiwa-web:</p>
-
-<pre><code class="language-sh">bower link
-</code></pre>
-
-<p>Move to your uchiwa repository directory:</p>
-
-<pre><code class="language-sh">cd $GOPATH/src/github.com/sensu/uchiwa
-</code></pre>
-
-<p>Uninstall the uchiwa-web bower component if previously installed:</p>
-
-<pre><code class="language-sh">bower uninstall uchiwa-web
-</code></pre>
-
-<p>Point the bower component uchiwa-web to the previously created link</p>
-
-<pre><code class="language-sh">bower link uchiwa-web
-</code></pre>
-
-<h2 id="development">Development</h2>
-
-<h3 id="backend-1">Backend</h3>
-
-<p>Run the program:</p>
-
-<pre><code class="language-sh">go run uchiwa.go
-</code></pre>
-
-<p><strong>N.B.</strong>: You&rsquo;ll need to relaunch this command if you modify the source code
-to apply changes.</p>
-
-<h3 id="frontend-1">Frontend</h3>
-
-<p>Generate <strong>CSS</strong> files from <strong>Sass</strong> templates:</p>
-
-<pre><code class="language-sh">grunt sass
-</code></pre>
-
-<h2 id="testing">Testing</h2>
-
-<h3 id="backend-2">Backend</h3>
-
-<p>Run the unit tests:</p>
-
-<pre><code class="language-sh">go test -v ./...
-</code></pre>
-
-<h3 id="frontend-2">Frontend</h3>
-
-<p>Run linting and unit tests:</p>
-
-<pre><code class="language-sh">grunt
-</code></pre>
-
+			<hr>
+			
 
 			<aside class="copyright" role="note">
 				
@@ -572,57 +503,6 @@ to apply changes.</p>
 				using the
 				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
 			</aside>
-
-			<footer class="footer">
-				
-
-<nav class="pagination" aria-label="Footer">
-  <div class="previous">
-  
-      <a href="https://docs.uchiwa.io/api/health/" title="Health API">
-        <span class="direction">
-          Previous
-        </span>
-        <div class="page">
-          <div class="button button-previous" role="button" aria-label="Previous">
-            <i class="icon icon-back"></i>
-          </div>
-          <div class="stretch">
-            <div class="title">
-              Health API
-            </div>
-          </div>
-        </div>
-      </a>
-  
-  </div>
-
-  <div class="next">
-  
-      <a href="https://docs.uchiwa.io/api/" title="Apis">
-        <span class="direction">
-          Next
-        </span>
-        <div class="page">
-          <div class="stretch">
-            <div class="title">
-              Apis
-            </div>
-          </div>
-          <div class="button button-next" role="button" aria-label="Next">
-            <i class="icon icon-forward"></i>
-          </div>
-        </div>
-      </a>
-  
-  </div>
-</nav>
-
-
-
-
-
-			</footer>
 		</div>
 	</article>
 
@@ -638,8 +518,8 @@ to apply changes.</p>
 
     <script>
     
-      var base_url = 'https:\/\/docs.uchiwa.io\/';
-      var repo_id  = 'sensu\/uchiwa';
+      var base_url = '';
+      var repo_id  = '';
     
     </script>
 

@@ -505,7 +505,7 @@ A query can use any field, visible or not, to match a value, such as:
 			Encrypted Passwords You can place hashed passwords in the password attributes, but only within the uchiwa object, in order to obfuscate users passwords in your configuration files.
 Please note that you must absolutely use the {crypt} prefix when using an encrypted password. For example:
 &quot;password&quot;: &quot;{crypt}$1$MteWnoFT$yhEi8KMxO794K0TIriZcI0&quot;  The following algorithms are supported (along the commands to create the hashes):
-   Algorithm Command     APR1 openssl passwd -apr1 MY_PASSWORD   MD5 mkpasswd &ndash;method=MD5 MY_PASSWORD   SHA-256 mkpasswd &ndash;method=SHA-256 MY_PASSWORD   SHA-512 mkpasswd &ndash;method=SHA-512 MY_PASSWORD    HTTPS Encryption You can serve all content over HTTPS, using Uchiwa, without the need of a reverse proxy.
+   Algorithm Command     APR1 openssl passwd -apr1 MY_PASSWORD   MD5 mkpasswd &ndash;method=MD5 MY_PASSWORD   SHA-256 mkpasswd &ndash;method=SHA-256 MY_PASSWORD   SHA-512 mkpasswd &ndash;method=SHA-512 MY_PASSWORD    Alternatively, you could use the Passlib hashing library for Python 2 &amp; 3.
 
 			<hr>
 			
