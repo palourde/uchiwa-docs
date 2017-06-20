@@ -136,4 +136,4 @@ Start Uchiwa
 ```
 
 ### Developping
-See the [Contributing documentation]({{< relref "contributing/index.md" >}}).
+See the [Contributing documentation]({{< relref "contributing.md" >}}).

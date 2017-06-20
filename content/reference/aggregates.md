@@ -21,5 +21,5 @@ From there, you can see the **check** and **client members**, in addition to the
 
 ## Delete An Aggregate
 It's currently impossible to delete an aggregate from Uchiwa, but we would love to
-have you [contribute]({{< relref "contributing/index.md" >}}) to Uchiwa by
+have you [contribute]({{< relref "contributing.md" >}}) to Uchiwa by
 implementing this feature!

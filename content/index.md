@@ -1,7 +1,7 @@
 ---
 title: Uchiwa
 type: index
-weight: 0
+weight: 1
 ---
 
 ## What is Uchiwa?

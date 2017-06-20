@@ -47,7 +47,7 @@ email   = "hello@uchiwa.io"
 [[menu.main]]
 name   = "Home"
 url    = "/"
-weight = 0
+weight = 1
 
 [[menu.main]]
 name   = "Getting Started"
@@ -71,7 +71,7 @@ weight = 40
 
 [[menu.main]]
 name   = "Contributing"
-url    = "contributing/"
+url    = "contributing"
 weight = 50
 
 
