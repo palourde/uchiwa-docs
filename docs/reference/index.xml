@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>References on Uchiwa Documentation</title>
-    <link>https://docs.uchiwa.io/reference/index.xml</link>
+    <link>https://docs.uchiwa.io/reference/</link>
     <description>Recent content in References on Uchiwa Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <atom:link href="https://docs.uchiwa.io/reference/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://docs.uchiwa.io/reference/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Aggregates</title>
@@ -15,27 +17,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.uchiwa.io/reference/aggregates/</guid>
-      <description>
-
-&lt;p&gt;To understand aggregates in Sensu, please refer yourself to the
-&lt;a href=&#34;https://sensuapp.org/docs/latest/reference/aggregates.html&#34;&gt;Sensu documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;list-all-aggregates&#34;&gt;List All Aggregates&lt;/h2&gt;
-
-&lt;p&gt;To view all aggregates, head over to the &lt;em&gt;aggregates view&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;view-an-aggregate&#34;&gt;View An Aggregate&lt;/h2&gt;
-
-&lt;p&gt;To see the detail of a specific aggregate, click on it from the &lt;em&gt;aggregates view&lt;/em&gt;.
-From there, you can see the &lt;strong&gt;check&lt;/strong&gt; and &lt;strong&gt;client members&lt;/strong&gt;, in addition to the
-&lt;strong&gt;results&lt;/strong&gt; of every check members.&lt;/p&gt;
-
-&lt;h2 id=&#34;delete-an-aggregate&#34;&gt;Delete An Aggregate&lt;/h2&gt;
-
-&lt;p&gt;It&amp;rsquo;s currently impossible to delete an aggregate from Uchiwa, but we would love to
-have you &lt;a href=&#34;https://docs.uchiwa.io/contributing/&#34;&gt;contribute&lt;/a&gt; to Uchiwa by
-implementing this feature!&lt;/p&gt;
-</description>
+      <description>To understand aggregates in Sensu, please refer yourself to the Sensu documentation.
+List All Aggregates To view all aggregates, head over to the aggregates view.
+View An Aggregate To see the detail of a specific aggregate, click on it from the aggregates view. From there, you can see the check and client members, in addition to the results of every check members.
+Delete An Aggregate It&amp;rsquo;s currently impossible to delete an aggregate from Uchiwa, but we would love to have you contribute to Uchiwa by implementing this feature!</description>
     </item>
     
     <item>
@@ -44,28 +29,9 @@ implementing this feature!&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.uchiwa.io/reference/checks/</guid>
-      <description>
-
-&lt;p&gt;To understand checks in Sensu, please refer yourself to the
-&lt;a href=&#34;https://sensuapp.org/docs/latest/reference/checks.html&#34;&gt;Sensu documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;list-all-checks&#34;&gt;List All Checks&lt;/h2&gt;
-
-&lt;p&gt;To view all checks, head over to the &lt;em&gt;checks view&lt;/em&gt;. Please note that standalone checks
-that are not installed on the &lt;em&gt;Sensu Server&lt;/em&gt; will not be displayed.&lt;/p&gt;
-
-&lt;h2 id=&#34;issue-a-check-request&#34;&gt;Issue A Check Request&lt;/h2&gt;
-
-&lt;p&gt;You can force a check request across a datacenter by selecting one or multiple
-checks on the &lt;em&gt;checks view&lt;/em&gt; and clicking on the &lt;strong&gt;Issue Check Request&lt;/strong&gt; action
-within the &lt;strong&gt;Bulk Actions&lt;/strong&gt; dropdown menu.&lt;/p&gt;
-
-&lt;h2 id=&#34;silence-unsilence-a-check&#34;&gt;Silence/Unsilence A Check&lt;/h2&gt;
-
-&lt;p&gt;You can silence a check across all clients within a datacenter by selecting
-one or multiple checks on the &lt;em&gt;checks view&lt;/em&gt; and clicking on the
-&lt;strong&gt;Silence/Unsilence&lt;/strong&gt; action within the &lt;strong&gt;Bulk Actions&lt;/strong&gt; dropdown menu.&lt;/p&gt;
-</description>
+      <description>To understand checks in Sensu, please refer yourself to the Sensu documentation.
+List All Checks To view all checks, head over to the checks view. Please note that standalone checks that are not installed on the Sensu Server will not be displayed.
+Issue A Check Request You can force a check request across a datacenter by selecting one or multiple checks on the checks view and clicking on the Issue Check Request action within the Bulk Actions dropdown menu.</description>
     </item>
     
     <item>
@@ -74,31 +40,9 @@ one or multiple checks on the &lt;em&gt;checks view&lt;/em&gt; and clicking on t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.uchiwa.io/reference/clients/</guid>
-      <description>
-
-&lt;p&gt;To understand clients in Sensu, please refer yourself to the
-&lt;a href=&#34;https://sensuapp.org/docs/latest/reference/clients.html&#34;&gt;Sensu documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;list-all-clients&#34;&gt;List All Clients&lt;/h2&gt;
-
-&lt;p&gt;To view all clients, including Sensu proxy clients (formerly known as
-&amp;ldquo;Just-in-time&amp;rdquo; or &amp;ldquo;JIT&amp;rdquo; clients), head over to the &lt;em&gt;clients view&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;view-a-client&#34;&gt;View A Client&lt;/h2&gt;
-
-&lt;p&gt;To see the detail of a specific client, click on it from the &lt;em&gt;clients view&lt;/em&gt;.
-From there, you can see the client data of the left panel and the check results
-data on the right one.&lt;/p&gt;
-
-&lt;h2 id=&#34;view-a-check-result-data&#34;&gt;View A Check Result Data&lt;/h2&gt;
-
-&lt;p&gt;To see the detail of a check result, click on it from the &lt;em&gt;client view&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;request-to-delete-check-result-data&#34;&gt;Request To Delete Check Result Data&lt;/h2&gt;
-
-&lt;p&gt;Once you see the detail of a check result, you can delete the check result data
-by clicking on the &lt;strong&gt;Delete Result&lt;/strong&gt; icon.&lt;/p&gt;
-</description>
+      <description>To understand clients in Sensu, please refer yourself to the Sensu documentation.
+List All Clients To view all clients, including Sensu proxy clients (formerly known as &amp;ldquo;Just-in-time&amp;rdquo; or &amp;ldquo;JIT&amp;rdquo; clients), head over to the clients view.
+View A Client To see the detail of a specific client, click on it from the clients view. From there, you can see the client data of the left panel and the check results data on the right one.</description>
     </item>
     
     <item>
@@ -107,25 +51,10 @@ by clicking on the &lt;strong&gt;Delete Result&lt;/strong&gt; icon.&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.uchiwa.io/reference/events/</guid>
-      <description>
-
-&lt;p&gt;To understand events in Sensu, please refer yourself to the
-&lt;a href=&#34;https://sensuapp.org/docs/latest/reference/events.html&#34;&gt;Sensu documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;list-all-events&#34;&gt;List All Events&lt;/h2&gt;
-
-&lt;p&gt;To view all events, head over to the &lt;em&gt;events view&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;view-an-event&#34;&gt;View An Event&lt;/h2&gt;
-
-&lt;p&gt;To see the detail of a specific event, click on it from the &lt;em&gt;events view&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;resolve-an-event&#34;&gt;Resolve An Event&lt;/h2&gt;
-
-&lt;p&gt;You can resolve an event by selecting one or multiple events on the
-&lt;em&gt;events view&lt;/em&gt; and clicking on the &lt;strong&gt;Resolve&lt;/strong&gt; action within the &lt;strong&gt;Bulk Actions&lt;/strong&gt;
-dropdown menu.&lt;/p&gt;
-</description>
+      <description>To understand events in Sensu, please refer yourself to the Sensu documentation.
+List All Events To view all events, head over to the events view.
+View An Event To see the detail of a specific event, click on it from the events view.
+Resolve An Event You can resolve an event by selecting one or multiple events on the events view and clicking on the Resolve action within the Bulk Actions dropdown menu.</description>
     </item>
     
     <item>
@@ -134,37 +63,9 @@ dropdown menu.&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.uchiwa.io/reference/silencing/</guid>
-      <description>
-
-&lt;p&gt;Follow these instructions to &lt;strong&gt;silence&lt;/strong&gt; or &lt;strong&gt;unsilence&lt;/strong&gt; an element.&lt;/p&gt;
-
-&lt;h2 id=&#34;silence-a-check&#34;&gt;Silence a check&lt;/h2&gt;
-
-&lt;h3 id=&#34;across-a-datacenter&#34;&gt;Across a datacenter&lt;/h3&gt;
-
-&lt;p&gt;You can silence a check for a given datacenter by selecting one or multiple checks on the
-&lt;em&gt;checks view&lt;/em&gt; and clicking on the &lt;strong&gt;Silence/Unsilence&lt;/strong&gt; action within the &lt;strong&gt;Bulk Actions&lt;/strong&gt;
-dropdown menu.&lt;/p&gt;
-
-&lt;h3 id=&#34;for-a-particular-client&#34;&gt;For a particular client&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://docs.uchiwa.io/reference/clients/#view-a-client&#34;&gt;Access the client view for this client&lt;/a&gt;
-and click on the silence icon corresponding to the check on the right panel.&lt;/p&gt;
-
-&lt;h2 id=&#34;silence-a-client&#34;&gt;Silence a client&lt;/h2&gt;
-
-&lt;p&gt;You can silence a client from the &lt;strong&gt;client view&lt;/strong&gt;, &lt;strong&gt;clients view&lt;/strong&gt; and
-&lt;strong&gt;events view&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;silence-an-event&#34;&gt;Silence an event&lt;/h2&gt;
-
-&lt;p&gt;You can silence an event from the &lt;strong&gt;events view&lt;/strong&gt; or the &lt;strong&gt;client view&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;silence-a-subscription&#34;&gt;Silence a subscription&lt;/h2&gt;
-
-&lt;p&gt;You can silence a subscription for a given datacenter by clicking on the
-&lt;strong&gt;Add&lt;/strong&gt; button in the table header, within the &lt;strong&gt;silenced&lt;/strong&gt; view.&lt;/p&gt;
-</description>
+      <description>Follow these instructions to silence or unsilence an element.
+Silence a check Across a datacenter You can silence a check for a given datacenter by selecting one or multiple checks on the checks view and clicking on the Silence/Unsilence action within the Bulk Actions dropdown menu.
+For a particular client Access the client view for this client and click on the silence icon corresponding to the check on the right panel.</description>
     </item>
     
   </channel>

@@ -2,12 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apis on Uchiwa Documentation</title>
-    <link>https://docs.uchiwa.io/api/index.xml</link>
+    <link>https://docs.uchiwa.io/api/</link>
     <description>Recent content in Apis on Uchiwa Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <atom:link href="https://docs.uchiwa.io/api/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://docs.uchiwa.io/api/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Authentication</title>
@@ -15,33 +17,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.uchiwa.io/api/authentication/</guid>
-      <description>
-
-&lt;p&gt;In order to use the Uchiwa API when authentication is enabled, you must provide
-an access token with every request.&lt;/p&gt;
-
-&lt;p&gt;Remember to keep your access tokens secret and use HTTPS wherever possible.&lt;/p&gt;
-
-&lt;h2 id=&#34;configuring-an-access-token&#34;&gt;Configuring an access token&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Set the &lt;em&gt;accessToken&lt;/em&gt; attribute in the appropriate role; see the
-&lt;a href=&#34;https://docs.uchiwa.io/getting-started/configuration/#multiple-users&#34;&gt;documentation&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Restart Uchiwa to apply this change.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;providing-the-access-token&#34;&gt;Providing the access token&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;In a header&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;curl -H &amp;quot;Authorization: token TOKEN&amp;quot; https://localhost:3000/events
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;As a parameter&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;curl https://localhost:3000/events?token=TOKEN
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>In order to use the Uchiwa API when authentication is enabled, you must provide an access token with every request.
+Remember to keep your access tokens secret and use HTTPS wherever possible.
+Configuring an access token  Set the accessToken attribute in the appropriate role; see the documentation. Restart Uchiwa to apply this change.  Providing the access token In a header
+curl -H &amp;quot;Authorization: token TOKEN&amp;quot; https://localhost:3000/events  As a parameter</description>
     </item>
     
     <item>
@@ -50,105 +29,8 @@ an access token with every request.&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.uchiwa.io/api/health/</guid>
-      <description>
-
-&lt;h2 id=&#34;health-get&#34;&gt;/health (GET)&lt;/h2&gt;
-
-&lt;p&gt;Returns both Uchiwa and Sensu API status&lt;/p&gt;
-
-&lt;h3 id=&#34;response-example-status-200&#34;&gt;Response Example (Status 200)&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-  &amp;quot;uchiwa&amp;quot;: &amp;quot;ok&amp;quot;,
-  &amp;quot;sensu&amp;quot;: {
-    &amp;quot;us-east-1&amp;quot;: {
-      &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot;
-    },
-    &amp;quot;us-west-1&amp;quot;:{
-      &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot;
-    }
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;response-codes&#34;&gt;Response Codes&lt;/h3&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;HTTP Status Code&lt;/th&gt;
-&lt;th&gt;Reason&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;200&lt;/td&gt;
-&lt;td&gt;All the services are working&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;503&lt;/td&gt;
-&lt;td&gt;One of the service is unavailable&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&#34;health-service&#34;&gt;/health/{service}&lt;/h2&gt;
-
-&lt;p&gt;Returns status of &lt;strong&gt;Sensu API&lt;/strong&gt; or &lt;strong&gt;Uchiwa&lt;/strong&gt; service.&lt;/p&gt;
-
-&lt;h3 id=&#34;response-example-status-200-1&#34;&gt;Response Example (Status 200)&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;us-east-1&amp;quot;: {
-  &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot;
-},
-&amp;quot;us-west-1&amp;quot;:{
-  &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;parameters&#34;&gt;Parameters&lt;/h3&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;service&lt;/td&gt;
-&lt;td&gt;name of the service; either &lt;code&gt;sensu&lt;/code&gt; or &lt;code&gt;uchiwa&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&#34;response-codes-1&#34;&gt;Response Codes&lt;/h3&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;HTTP Status Code&lt;/th&gt;
-&lt;th&gt;Reason&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;200&lt;/td&gt;
-&lt;td&gt;The service is working&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;503&lt;/td&gt;
-&lt;td&gt;The service is unavailable&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</description>
+      <description>/health (GET) Returns both Uchiwa and Sensu API status
+Response Example (Status 200) { &amp;quot;uchiwa&amp;quot;: &amp;quot;ok&amp;quot;, &amp;quot;sensu&amp;quot;: { &amp;quot;us-east-1&amp;quot;: { &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot; }, &amp;quot;us-west-1&amp;quot;:{ &amp;quot;output&amp;quot;: &amp;quot;ok&amp;quot; } } }  Response Codes    HTTP Status Code Reason     200 All the services are working   503 One of the service is unavailable    /health/{service} Returns status of Sensu API or Uchiwa service.</description>
     </item>
     
   </channel>
