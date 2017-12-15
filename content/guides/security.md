@@ -60,3 +60,34 @@ path of the keys you just generated:
 ```
 
 Finally, restart Uchiwa and access your dashboard over HTTPS.
+
+### TLS Configuration
+
+Additional attributes can be provided to tweak the TLS configuration:
+```json
+{
+  "uchiwa": {
+    "ssl": {
+      "certfile": "/path/to/uchiwa.pem",
+      "keyfile": "/path/to/uchiwa.key",
+      "ciphersuite": [
+        "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+        "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+        "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+        "TLS_RSA_WITH_AES_128_GCM_SHA256",
+        "TLS_RSA_WITH_AES_256_GCM_SHA384",
+        "TLS_RSA_WITH_AES_128_CBC_SHA",
+        "TLS_RSA_WITH_AES_256_CBC_SHA",
+      ],
+      "tlsminversion": "tls10"
+    }
+  }
+}
+```
+
+Key     | Required | Type | Description
+--------|----------|------|------
+ciphersuite | false | array of strings | List of cipher suite supported. See the example above for the default suite. Available cipher suites are listed in the [Go TLS documentation](https://golang.org/src/crypto/tls/cipher_suites.go).
+tlsminversion | false | string | Minimum supported version of TLS. Allowed values are `tls10`, `tls11` & `tls12`.
