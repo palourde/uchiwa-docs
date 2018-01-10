@@ -124,6 +124,27 @@ npm install --production # Standard user
 npm install --production --unsafe-perm # Root user
 ```
 
+### Building package in docker
+
+To get uchiwa packages (both rpm and deb), please follow the below steps:
+```sh
+# clone and go to the uchiwa project root
+$ cd uchiwa
+# Build docker images for building packages:
+$ docker build ./build/ -t sensu_builder
+# ensure you have tag on the commit from which packages should be built, please check build/travis.sh for details
+# run build
+$ docker run --rm -it \
+  -v $(pwd):/go/src/github.com/sensu/uchiwa \
+  -v /tmp/sensu_packages:/tmp/assets/pkg/s3 \
+  -w /go/src/github.com/sensu/uchiwa sensu_builder ./build/travis.sh
+# get packages from /tmp/sensu_packages
+```
+
+{{< note title="Note" >}}
+Please note, within docker we build statically linked executable (CGO_ENABLED=0)
+{{< /note >}}
+
 ### Running Uchiwa Locally
 Adjust your configuration:
 ```sh
