@@ -606,6 +606,28 @@ GOOS=linux GOARCH=amd64 go build -o build/uchiwa . # Cross Compilation, see Go d
 npm install --production --unsafe-perm # Root user
 </code></pre>
 
+<h3 id="building-package-in-docker">Building package in docker</h3>
+
+<p>To get uchiwa packages (both rpm and deb), please follow the below steps:</p>
+
+<pre><code class="language-sh"># clone and go to the uchiwa project root
+$ cd uchiwa
+# Build docker images for building packages:
+$ docker build ./build/ -t sensu_builder
+# ensure you have tag on the commit from which packages should be built, please check build/travis.sh for details
+# run build
+$ docker run --rm -it \
+  -v $(pwd):/go/src/github.com/sensu/uchiwa \
+  -v /tmp/sensu_packages:/tmp/assets/pkg/s3 \
+  -w /go/src/github.com/sensu/uchiwa sensu_builder ./build/travis.sh
+# get packages from /tmp/sensu_packages
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note, within docker we build statically linked executable (CGO_ENABLED=0)</p>
+</div>
+
 <h3 id="running-uchiwa-locally">Running Uchiwa Locally</h3>
 
 <p>Adjust your configuration:</p>
